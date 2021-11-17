@@ -13,7 +13,10 @@
     - Base Dropdown: deutandev/revenge
     - Compare Dropdown: Repo hasil fork
 
-## Resources
+### Resources
 [Download Github Desktop](https://desktop.github.com/)  
 [Pull request tutorial](https://github.com/yangsu/pull-request-tutorial)  
 [Git command cheat sheet](https://training.github.com/downloads/id/github-git-cheat-sheet/)
+
+### Tes
+Gunakan repo [deutandev/playground](https://github.com/deutandev/playground) untuk "bermain" dengan git/github. Bebas untuk menambah/mengubah file untuk Pull Request.
