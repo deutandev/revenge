@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: af02491291a9e653f9abd9afb059cf6c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: Bone
+    100006: Bone.001
+    100008: Bone.001.Fr
+    100010: Bone.001.Fr.001
+    100012: Bone.001.Fr.002
+    100014: Bone.001.Fr.003
+    100016: Bone.001.Fr.004
+    100018: Bone.001.Fr.005
+    100020: Bone.001.Fr.006
+    100022: Bone.001.Fr.006_end
+    100024: Bone.001.Fr.008
+    100026: Bone.001.Fr.009
+    100028: Bone.001.Fr.010
+    100030: Bone.001.Fr.010_end
+    100032: Bone.001.Fr.011
+    100034: Bone.001.Fr.012
+    100036: Bone.001.Fr.013
+    100038: Bone.001.Fr.014
+    100040: Bone.001.Fr.015
+    100042: Bone.001.Fr.015_end
+    100044: Bone.001_end
+    100046: Bone.002
+    100048: Bone.002_end
+    100050: Ear
+    100052: Eye
+    100054: EyeBrow
+    100056: //RootNode
+    100058: Nose
+    100060: WIng1
+    100062: Wing1.Bk
+    100064: Wing1.Bk.001
+    100066: Wing1.Bk.002
+    100068: Wing1.Bk.003
+    100070: Wing1.Bk.004
+    100072: Wing1.Bk.005
+    100074: Wing1.Bk.006
+    100076: Wing1.Bk.006_end
+    100078: Wing1.Bk.008
+    100080: Wing1.Bk.009
+    100082: Wing1.Bk.010
+    100084: Wing1.Bk.011
+    100086: Wing1.Bk.011_end
+    100088: Wing1.Bk.012
+    100090: Wing1.Bk.013
+    100092: Wing1.Bk.014
+    100094: Wing1.Bk.015
+    100096: Wing1.Bk.015_end
+    100098: Wing2
+    100100: Wing3
+    100102: WingBone
+    400000: Armature
+    400002: Body
+    400004: Bone
+    400006: Bone.001
+    400008: Bone.001.Fr
+    400010: Bone.001.Fr.001
+    400012: Bone.001.Fr.002
+    400014: Bone.001.Fr.003
+    400016: Bone.001.Fr.004
+    400018: Bone.001.Fr.005
+    400020: Bone.001.Fr.006
+    400022: Bone.001.Fr.006_end
+    400024: Bone.001.Fr.008
+    400026: Bone.001.Fr.009
+    400028: Bone.001.Fr.010
+    400030: Bone.001.Fr.010_end
+    400032: Bone.001.Fr.011
+    400034: Bone.001.Fr.012
+    400036: Bone.001.Fr.013
+    400038: Bone.001.Fr.014
+    400040: Bone.001.Fr.015
+    400042: Bone.001.Fr.015_end
+    400044: Bone.001_end
+    400046: Bone.002
+    400048: Bone.002_end
+    400050: Ear
+    400052: Eye
+    400054: EyeBrow
+    400056: //RootNode
+    400058: Nose
+    400060: WIng1
+    400062: Wing1.Bk
+    400064: Wing1.Bk.001
+    400066: Wing1.Bk.002
+    400068: Wing1.Bk.003
+    400070: Wing1.Bk.004
+    400072: Wing1.Bk.005
+    400074: Wing1.Bk.006
+    400076: Wing1.Bk.006_end
+    400078: Wing1.Bk.008
+    400080: Wing1.Bk.009
+    400082: Wing1.Bk.010
+    400084: Wing1.Bk.011
+    400086: Wing1.Bk.011_end
+    400088: Wing1.Bk.012
+    400090: Wing1.Bk.013
+    400092: Wing1.Bk.014
+    400094: Wing1.Bk.015
+    400096: Wing1.Bk.015_end
+    400098: Wing2
+    400100: Wing3
+    400102: WingBone
+    2100000: Material.002
+    2100002: Black
+    2100004: Material.001
+    2100006: Primary
+    2100008: Secondary
+    4300000: Body
+    4300002: Eye
+    4300004: EyeBrow
+    4300006: Ear
+    4300008: WingBone
+    4300010: WIng1
+    4300012: Wing2
+    4300014: Wing3
+    4300016: Nose
+    7400000: Armature|fly
+    9500000: //RootNode
+    13700000: Body
+    13700002: Ear
+    13700004: Eye
+    13700006: EyeBrow
+    13700008: Nose
+    13700010: WIng1
+    13700012: Wing2
+    13700014: Wing3
+    13700016: WingBone
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bat Body
+    second: {fileID: 2800000, guid: ea7b4a37071c0663f8d9992caab2af08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bat Ear 2
+    second: {fileID: 2800000, guid: cd5e5b6db35dee6ec8d5198efcc9769b, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|fly
+      takeName: Armature|fly
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
