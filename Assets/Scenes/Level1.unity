@@ -1194,7 +1194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: -20}
+  m_LocalPosition: {x: -15, y: 0, z: -22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1212,9 +1212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9a5da10350553648492f07389ca754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 2004105594}
   maxXWorldRange: 150
   minXWorldRange: -15
-  target: {fileID: 2004105594}
+  offset: {x: 0, y: 5, z: -20}
+  smoothFactor: 4.3
 --- !u!1001 &553354064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2406,7 +2408,7 @@ PrefabInstance:
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
@@ -2456,7 +2458,7 @@ PrefabInstance:
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
@@ -2917,7 +2919,7 @@ PrefabInstance:
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 53620035505288056, guid: 376f1ddfd4461c156a15702d739d8aca,
         type: 3}
@@ -4364,7 +4366,7 @@ PrefabInstance:
     - target: {fileID: 5800505170804922476, guid: b61740589d874c6efa755dc98599de36,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5800505170804922476, guid: b61740589d874c6efa755dc98599de36,
         type: 3}

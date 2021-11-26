@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
+	public GameObject target;
 	public float maxXWorldRange, minXWorldRange;
 	private float yTargetPosition;
-	public GameObject target;
+	public Vector3 offset;
+	[Range(1, 10)]
+	public float smoothFactor;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,29 +17,11 @@ public class FollowTarget : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-		float x = target.transform.position.x;
-		float y = transform.position.y;
-		//float y = transform.position.y + (target.transform.position.y - yTargetPosition);
-		float z = transform.position.z;
+    void FixedUpdate()
+    {	
+		Vector3 targetPosition = target.transform.position + offset;
+		Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor*Time.fixedDeltaTime);
+		transform.position = smoothedPosition;
 		
-		/*
-		if(target.transform.position.y - yTargetPosition > 0) y += 0.4f;
-		else if(target.transform.position.y - yTargetPosition < 0) y-= 0.4f; */
-		
-        if ( target.transform.position.x > minXWorldRange &&
-			target.transform.position.x < maxXWorldRange)
-		{
-			transform.position = Vector3.Lerp(transform.position, new Vector3(x, y, z), 0.1f);
-		}
-		
-		/*
-		if(target.transform.position.y > -4.6f) 
-		{
-			transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, y, z), 0.1f);
-		}
-		
-		yTargetPosition = target.transform.position.y; */
     }
 }

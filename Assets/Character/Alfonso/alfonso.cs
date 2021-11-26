@@ -9,11 +9,12 @@ public class alfonso : MonoBehaviour
 	public float velocity = 5f;
 	Vector3 movement;
 	private Transform playerTransform;
-	private bool isJump = false;
+	private int jumpCount;
 	
     // Start is called before the first frame update
     void Start()
     {
+		jumpCount = 0;
         playerRigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
@@ -26,10 +27,10 @@ public class alfonso : MonoBehaviour
 			{
 				anim.SetTrigger("attack");
 			}
-		if (Input.GetKeyDown(KeyCode.Space) && isJump == false)
+		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
 		{
 			anim.SetBool("isJump", true);
-			isJump = true;
+			jumpCount++;
 			playerRigidbody.AddForce(Vector2.up * 1000f);
 		}
     }
@@ -40,7 +41,6 @@ public class alfonso : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         if(h == 1) playerTransform.rotation = Quaternion.Euler(0, 180, 0);
         else if (h == -1) playerTransform.rotation = Quaternion.Euler(0, 0, 0);
-        Debug.Log(h);
         Move(h);
         Animating(h);
     }
@@ -67,7 +67,7 @@ public class alfonso : MonoBehaviour
 	{	
 		if (collision.transform.tag.Equals("Platform"))
 		{
-			isJump = false;
+			jumpCount = 0;
 			anim.SetBool("isJump", false);
 		}
 	}
