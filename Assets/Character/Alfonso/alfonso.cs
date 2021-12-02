@@ -10,8 +10,8 @@ public class alfonso : MonoBehaviour
 	Vector3 movement;
 	private Transform playerTransform;
 	private int jumpCount;
-    // // public float jumpForce = 4000f;
-    public float jumpVelocity = 20f;
+    public float jumpForce = 4000f;
+    // public float jumpVelocity = 20f;
 	
     // Start is called before the first frame update
     void Start()
@@ -33,8 +33,8 @@ public class alfonso : MonoBehaviour
 		{
 			anim.SetBool("isJump", true);
 			jumpCount++;
-			// // playerRigidbody.AddForce(Vector2.up * jumpForce);
-            playerRigidbody.velocity = Vector2.up * jumpVelocity;
+			playerRigidbody.AddForce(Vector2.up * jumpForce);
+            // playerRigidbody.velocity = Vector2.up * jumpVelocity;
 		}
     }
     

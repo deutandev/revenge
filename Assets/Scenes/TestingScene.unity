@@ -641,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5af6b7f6260639e6aa3ee394414262bb, type: 2}
+    - target: {fileID: 9500000, guid: bcd5c89816f3b576c9ab455258358ab0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcd5c89816f3b576c9ab455258358ab0, type: 3}
 --- !u!1001 &345684195
@@ -2217,6 +2221,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ab8490227a81c31d8a0b9c5ec86bbef3, type: 2}
+    - target: {fileID: 9500000, guid: e353120ec6ebf3e5da9693ed49d34479, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e353120ec6ebf3e5da9693ed49d34479, type: 3}
 --- !u!1001 &1005708138
@@ -4452,7 +4460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVelocity: 15
-  jumpVelocity: 20
+  jumpForce: 1000
 --- !u!54 &2004105597
 Rigidbody:
   m_ObjectHideFlags: 0
