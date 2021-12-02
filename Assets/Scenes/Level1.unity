@@ -352,6 +352,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 136232711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &164211341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3499852178650722824, guid: cd111ba79a4e2bfc3b009d51e11b67e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 971785412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &166724927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1212,7 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9a5da10350553648492f07389ca754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 164211341}
   maxXWorldRange: 150
   minXWorldRange: -15
   offset: {x: 0, y: 5, z: -20}
