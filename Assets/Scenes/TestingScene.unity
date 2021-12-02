@@ -4921,6 +4921,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alfonso Mcgreedy
       objectReference: {fileID: 0}
+    - target: {fileID: 3499852178650821807, guid: cd111ba79a4e2bfc3b009d51e11b67e6,
+        type: 3}
+      propertyPath: fallMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499852178650821807, guid: cd111ba79a4e2bfc3b009d51e11b67e6,
+        type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3499852178650951208, guid: cd111ba79a4e2bfc3b009d51e11b67e6,
         type: 3}
       propertyPath: m_LocalPosition.x
