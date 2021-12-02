@@ -6,10 +6,12 @@ public class alfonso : MonoBehaviour
 {
 	private Rigidbody playerRigidbody;
 	private Animator anim;
-	public float velocity = 5f;
+	public float moveVelocity = 5f;
 	Vector3 movement;
 	private Transform playerTransform;
 	private int jumpCount;
+    public float jumpForce = 4000f;
+    // public float jumpVelocity = 20f;
 	
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,8 @@ public class alfonso : MonoBehaviour
 		{
 			anim.SetBool("isJump", true);
 			jumpCount++;
-			playerRigidbody.AddForce(Vector2.up * 1000f);
+			playerRigidbody.AddForce(Vector2.up * jumpForce);
+            // playerRigidbody.velocity = Vector2.up * jumpVelocity;
 		}
     }
     
@@ -51,7 +54,7 @@ public class alfonso : MonoBehaviour
         movement.Set(h, 0f, 0f);
         
         //Menormalisasi nilai vector agar total panjang dari vector adalah 1
-        movement = movement.normalized * velocity * Time.deltaTime;
+        movement = movement.normalized * moveVelocity * Time.deltaTime;
         
         //Move to position
         playerRigidbody.MovePosition(transform.position + movement);
