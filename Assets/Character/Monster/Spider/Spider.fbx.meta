@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: 7278194b1f5135dbda910d36b653003a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.006_end
+    100018: Bone.007
+    100020: Bone.008
+    100022: Bone.009
+    100024: Bone.010
+    100026: Bone.011
+    100028: Bone.012
+    100030: Bone.012_end
+    100032: Bone.013
+    100034: Bone.014
+    100036: Bone.015
+    100038: Bone.016
+    100040: Bone.017
+    100042: Bone.018
+    100044: Bone.018_end
+    100046: Bone.019
+    100048: Bone.020
+    100050: Bone.021
+    100052: Bone.022
+    100054: Bone.023
+    100056: Bone.023_end
+    100058: Bone.024
+    100060: Bone.025
+    100062: Bone.025_end
+    100064: Bone.026
+    100066: Bone.027
+    100068: Bone.027_end
+    100070: Bone_L
+    100072: Bone_L.001
+    100074: Bone_L.002
+    100076: Bone_L.003
+    100078: Bone_L.004
+    100080: Bone_L.005
+    100082: Bone_L.005_end
+    100084: Bone_L.006
+    100086: Bone_L.007
+    100088: Bone_L.008
+    100090: Bone_L.009
+    100092: Bone_L.010
+    100094: Bone_L.012
+    100096: Bone_L.012_end
+    100098: Bone_L.013
+    100100: Bone_L.014
+    100102: Bone_L.015
+    100104: Bone_L.016
+    100106: Bone_L.017
+    100108: Bone_L.018
+    100110: Bone_L.018_end
+    100112: Bone_R
+    100114: Bone_R.001
+    100116: Bone_R.002
+    100118: Bone_R.003
+    100120: Bone_R.004
+    100122: Bone_R.005
+    100124: Bone_R.005_end
+    100126: Bone_R.006
+    100128: Bone_R.007
+    100130: Bone_R.008
+    100132: Bone_R.009
+    100134: Bone_R.010
+    100136: Bone_R.011
+    100138: Bone_R.012
+    100140: Bone_R.012_end
+    100142: Bone_R.013
+    100144: Bone_R.014
+    100146: Bone_R.015
+    100148: Bone_R.016
+    100150: Bone_R.017
+    100152: Bone_R.018
+    100154: Bone_R.018_end
+    100156: Camera
+    100158: LABA LABA
+    100160: //RootNode
+    100162: Light
+    100164: Vert
+    100166: LABA LABA_MeshPart0
+    100168: LABA LABA_MeshPart1
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.006_end
+    400018: Bone.007
+    400020: Bone.008
+    400022: Bone.009
+    400024: Bone.010
+    400026: Bone.011
+    400028: Bone.012
+    400030: Bone.012_end
+    400032: Bone.013
+    400034: Bone.014
+    400036: Bone.015
+    400038: Bone.016
+    400040: Bone.017
+    400042: Bone.018
+    400044: Bone.018_end
+    400046: Bone.019
+    400048: Bone.020
+    400050: Bone.021
+    400052: Bone.022
+    400054: Bone.023
+    400056: Bone.023_end
+    400058: Bone.024
+    400060: Bone.025
+    400062: Bone.025_end
+    400064: Bone.026
+    400066: Bone.027
+    400068: Bone.027_end
+    400070: Bone_L
+    400072: Bone_L.001
+    400074: Bone_L.002
+    400076: Bone_L.003
+    400078: Bone_L.004
+    400080: Bone_L.005
+    400082: Bone_L.005_end
+    400084: Bone_L.006
+    400086: Bone_L.007
+    400088: Bone_L.008
+    400090: Bone_L.009
+    400092: Bone_L.010
+    400094: Bone_L.012
+    400096: Bone_L.012_end
+    400098: Bone_L.013
+    400100: Bone_L.014
+    400102: Bone_L.015
+    400104: Bone_L.016
+    400106: Bone_L.017
+    400108: Bone_L.018
+    400110: Bone_L.018_end
+    400112: Bone_R
+    400114: Bone_R.001
+    400116: Bone_R.002
+    400118: Bone_R.003
+    400120: Bone_R.004
+    400122: Bone_R.005
+    400124: Bone_R.005_end
+    400126: Bone_R.006
+    400128: Bone_R.007
+    400130: Bone_R.008
+    400132: Bone_R.009
+    400134: Bone_R.010
+    400136: Bone_R.011
+    400138: Bone_R.012
+    400140: Bone_R.012_end
+    400142: Bone_R.013
+    400144: Bone_R.014
+    400146: Bone_R.015
+    400148: Bone_R.016
+    400150: Bone_R.017
+    400152: Bone_R.018
+    400154: Bone_R.018_end
+    400156: Camera
+    400158: LABA LABA
+    400160: //RootNode
+    400162: Light
+    400164: Vert
+    400166: LABA LABA_MeshPart0
+    400168: LABA LABA_MeshPart1
+    2000000: Camera
+    2100000: Material
+    2100002: Material.005
+    2100004: Material.006
+    2100006: Material.003
+    2100008: Material.004
+    2100010: Material.007
+    2300000: Vert
+    3300000: Vert
+    4300000: Vert
+    4300002: LABA LABA
+    4300004: LABA LABA_MeshPart0
+    4300006: LABA LABA_MeshPart1
+    7400000: Armature|IDLE
+    7400002: Armature|WALK.001
+    7400004: Armature|WALK.001 (1)
+    9500000: //RootNode
+    10800000: Light
+    13700000: LABA LABA
+    13700002: LABA LABA_MeshPart0
+    13700004: LABA LABA_MeshPart1
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material-Color
+    second: {fileID: 2800000, guid: bad2080b146b74c4091e037de0befd5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.003-Color
+    second: {fileID: 2800000, guid: b676384140e270565997d653da360bf6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.004-Color
+    second: {fileID: 2800000, guid: f09e700650c9c2c348be3d26831429e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.005-Color
+    second: {fileID: 2800000, guid: 47e8281d5fce619889bb6647defa1e86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.006-Color
+    second: {fileID: 2800000, guid: bad75dda0ad5a9390bc8362d61fc897b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: material 07
+    second: {fileID: 2800000, guid: b64c6a1b2a8f090fc8aee5e3e627fcf4, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|WALK.001 (1)
+      takeName: Armature|WALK.001
+      firstFrame: 0
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|WALK.001
+      takeName: Armature|WALK.001
+      firstFrame: 0
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
