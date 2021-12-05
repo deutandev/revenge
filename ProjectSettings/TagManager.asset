@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Spider
+  - Spike
+  - Bat
   layers:
   - Default
   - TransparentFX

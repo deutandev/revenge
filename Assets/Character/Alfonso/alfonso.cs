@@ -37,7 +37,7 @@ public class alfonso : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
 		{
 			anim.SetTrigger("attack");
-			anim.SetTrigger("attack2");
+			//anim.SetTrigger("attack2");
 			
 			Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
 			foreach(Collider enemy in hitEnemies)
@@ -52,7 +52,8 @@ public class alfonso : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1 && move == true)
 		{
 			jumpCount++;
-			playerRigidbody.AddForce(Vector2.up * 1800f);
+			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
+			else if (jumpCount == 2) playerRigidbody.velocity = Vector2.up * 14f;
 		}
     }
     
@@ -100,7 +101,7 @@ public class alfonso : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {   
-        if (collision.gameObject.tag == "Spider")
+        if (collision.gameObject.tag == "Spider" || collision.gameObject.tag == "Bat")
         {
 			hitEffectAnimator.SetTrigger("hit"); 
 			health -= 20;
@@ -116,7 +117,26 @@ public class alfonso : MonoBehaviour
 			}
 			StartCoroutine(DontMove(1f));
 		}
+		
+		if (collision.gameObject.tag == "Spike")
+		{
+			hitEffectAnimator.SetTrigger("hit"); 
+			health -= 20;
+			healthBar.value = health;
+			
+			int falDir = 0;
+			if(playerTransform.rotation.y == 1) falDir = 1;
+			else falDir = -1;
+			
+			playerRigidbody.AddForce(800f * falDir, 2000f, 0);
+			StartCoroutine(DontMove(1f));
+		}
     }
+    
+    void OnTriggerEnter(Collider collision)
+    {
+		
+	}
     
     IEnumerator DontMove(float duration)
 	{
