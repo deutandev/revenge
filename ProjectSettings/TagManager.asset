@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Spider
+  - Spike
+  - Bat
+  - Coin
+  - Diamond
   layers:
   - Default
   - TransparentFX

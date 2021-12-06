@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af02491291a9e653f9abd9afb059cf6c
+guid: 4d9010ec73a1d359dadb3aa84cb40dc8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -132,17 +132,8 @@ ModelImporter:
     13700012: Wing2
     13700014: Wing3
     13700016: WingBone
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Bat Body
-    second: {fileID: 2800000, guid: ea7b4a37071c0663f8d9992caab2af08, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Bat Ear 2
-    second: {fileID: 2800000, guid: cd5e5b6db35dee6ec8d5198efcc9769b, type: 3}
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -202,7 +193,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
@@ -216,7 +207,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
