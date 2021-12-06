@@ -8,6 +8,8 @@ TagManager:
   - Spider
   - Spike
   - Bat
+  - Coin
+  - Diamond
   layers:
   - Default
   - TransparentFX

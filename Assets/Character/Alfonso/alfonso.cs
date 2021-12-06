@@ -6,19 +6,28 @@ using UnityEngine.UI;
 public class alfonso : MonoBehaviour
 {
 	private Rigidbody playerRigidbody;
-	private Animator anim;
-	public Animator hitEffectAnimator;
-	public Slider healthBar;
-	public float velocity = 5f;
+	private Transform playerTransform;
+	
+	public GameObject RagdollVersion;
+	
 	public Transform groundCheck, hitBox;
 	public LayerMask whatIsGround, whatIsEnemy;
 	public float landRadius, attackRange;
 	Vector3 movement;
-	private Transform playerTransform;
+	
 	//private float attackRate = 2f, nextAttackTime = 0f;
 	private int jumpCount, attackCount;
 	private bool move = true;
+	
+	private Animator anim;
+	public Animator hitEffectAnimator;
+	
+	public Text coinUI;
+	public Slider healthBar;
+	
+	public float velocity = 5f;
 	private float health = 100;
+	private int coin = 0;
 	
     // Start is called before the first frame update
     void Start()
@@ -102,10 +111,7 @@ public class alfonso : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Spider" || collision.gameObject.tag == "Bat")
-        {
-			hitEffectAnimator.SetTrigger("hit"); 
-			health -= 20;
-			healthBar.value = health;
+        {	
 			float collisionPosX = collision.gameObject.transform.position.x;
 			if (playerTransform.position.x > collisionPosX)
 			{
@@ -115,27 +121,56 @@ public class alfonso : MonoBehaviour
 			{
 				playerRigidbody.AddForce(-600f, 1600f, 0);	
 			}
+			
+			StartCoroutine(TakeDamage(20f));
+			
 			StartCoroutine(DontMove(1f));
 		}
 		
 		if (collision.gameObject.tag == "Spike")
 		{
-			hitEffectAnimator.SetTrigger("hit"); 
-			health -= 20;
-			healthBar.value = health;
-			
 			int falDir = 0;
 			if(playerTransform.rotation.y == 1) falDir = 1;
 			else falDir = -1;
 			
 			playerRigidbody.AddForce(800f * falDir, 2000f, 0);
+			
+			StartCoroutine(TakeDamage(20f));
+			
 			StartCoroutine(DontMove(1f));
 		}
     }
     
     void OnTriggerEnter(Collider collision)
     {
+		if (collision.gameObject.tag == "Coin")
+		{
+			coin++;
+			coinUI.text = coin.ToString();
+			Destroy(collision.gameObject);
+		}
 		
+		if (collision.gameObject.tag == "Diamond")
+		{
+			coin += 10;
+			coinUI.text = coin.ToString();
+			Destroy(collision.gameObject);
+		}
+	}
+	
+	IEnumerator TakeDamage(float damage)
+	{
+		hitEffectAnimator.SetTrigger("hit"); 
+		health -= damage;
+		healthBar.value = health;
+		
+		yield return new WaitForSeconds(0);
+		
+		if(health <= 0)
+		{
+			Instantiate(RagdollVersion, transform.position, transform.rotation);
+			Destroy(gameObject);	
+		}
 	}
     
     IEnumerator DontMove(float duration)

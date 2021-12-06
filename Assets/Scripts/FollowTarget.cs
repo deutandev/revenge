@@ -18,10 +18,11 @@ public class FollowTarget : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {	
+    {
+		if(target == null) target = GameObject.Find("Alfonso Mcgreedy (ragdoll version)(Clone)");
+		
 		Vector3 targetPosition = target.transform.position + offset;
 		Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor*Time.fixedDeltaTime);
-		transform.position = smoothedPosition;
-		
+		transform.position = smoothedPosition;		
     }
 }

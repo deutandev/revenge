@@ -23543,9 +23543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bd3015b1b004dd5904a714af713f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffectAnimator: {fileID: 0}
-  healthBar: {fileID: 0}
-  velocity: 10
+  RagdollVersion: {fileID: 6149703848252027619, guid: 5fdec9c7e8ea2d75c9e0a4dd951e5c34,
+    type: 3}
   groundCheck: {fileID: 2577193465853446081}
   hitBox: {fileID: 2577193465862348587}
   whatIsGround:
@@ -23556,6 +23555,10 @@ MonoBehaviour:
     m_Bits: 1024
   landRadius: 1
   attackRange: 3
+  hitEffectAnimator: {fileID: 0}
+  coinUI: {fileID: 0}
+  healthBar: {fileID: 0}
+  velocity: 10
 --- !u!1 &2577193464060488715
 GameObject:
   m_ObjectHideFlags: 0
