@@ -10,6 +10,11 @@ public class alfonso : MonoBehaviour
 	
 	public GameObject RagdollVersion;
 	
+    public PlayerButton LeftButton;
+    public PlayerButton RightButton;
+    
+    public LevelManager level;
+	
 	public Transform groundCheck, hitBox;
 	public LayerMask whatIsGround, whatIsEnemy;
 	public float landRadius, attackRange;
@@ -83,8 +88,12 @@ public class alfonso : MonoBehaviour
 		{
 			//Nilai Input Horizontal (-1,0,1)
 			float h = Input.GetAxisRaw("Horizontal");
+			if( RightButton.IsPressed ) h = 1 ;
+			if( LeftButton.IsPressed )  h = -1 ;
+			
 			if(h == 1) playerTransform.rotation = Quaternion.Euler(0, 180, 0);
 			else if (h == -1) playerTransform.rotation = Quaternion.Euler(0, 0, 0);
+			
 			Move(h);
 			Animating(h);	
 		}
@@ -107,6 +116,31 @@ public class alfonso : MonoBehaviour
         bool walking = h != 0f;
         anim.SetBool("isRun", walking);
     }
+    
+    public void Jump()
+    {
+		if (jumpCount < 1 && move == true)
+		{
+			jumpCount++;
+			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
+			else if (jumpCount == 2) playerRigidbody.velocity = Vector2.up * 14f;
+		}
+	}
+	
+	public void Attack()
+	{
+		anim.SetTrigger("attack");
+		//anim.SetTrigger("attack2");
+			
+		Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
+		foreach(Collider enemy in hitEnemies)
+		{
+			enemy.GetComponent<Enemy>().TakeDamage(15f);
+		}
+			
+		//nextAttackTime = Time.time + 1f / attackRate;
+		StartCoroutine(DontMove(0.77f));
+	}
     
     void OnCollisionEnter(Collision collision)
     {   
@@ -156,6 +190,11 @@ public class alfonso : MonoBehaviour
 			coinUI.text = coin.ToString();
 			Destroy(collision.gameObject);
 		}
+		
+		if (collision.gameObject.tag == "Finish")
+		{
+			level.isComplete = true;
+		}
 	}
 	
 	IEnumerator TakeDamage(float damage)
@@ -168,6 +207,7 @@ public class alfonso : MonoBehaviour
 		
 		if(health <= 0)
 		{
+			level.isGameover = true;
 			Instantiate(RagdollVersion, transform.position, transform.rotation);
 			Destroy(gameObject);	
 		}
