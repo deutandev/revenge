@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowTarget : MonoBehaviour
 {
 	public GameObject target;
-	public float maxXWorldRange, minXWorldRange;
+	public float maxWorldRange, minWorldRange;
 	private float yTargetPosition;
 	public Vector3 offset;
 	[Range(1, 10)]
@@ -22,7 +22,10 @@ public class FollowTarget : MonoBehaviour
 		if(target == null) target = GameObject.Find("Alfonso Mcgreedy (ragdoll version)(Clone)");
 		
 		Vector3 targetPosition = target.transform.position + offset;
+		
+		if(target.transform.position.x <= minWorldRange) targetPosition.x = transform.position.x;
+		
 		Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor*Time.fixedDeltaTime);
-		transform.position = smoothedPosition;		
+		transform.position = smoothedPosition;
     }
 }
