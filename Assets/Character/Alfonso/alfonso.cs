@@ -10,6 +10,8 @@ public class alfonso : MonoBehaviour
 	
 	public GameObject RagdollVersion;
 	
+	public FollowTarget camera;
+	
     public PlayerButton LeftButton;
     public PlayerButton RightButton;
     
@@ -20,7 +22,7 @@ public class alfonso : MonoBehaviour
 	public float landRadius, attackRange;
 	Vector3 movement;
 	
-	//private float attackRate = 2f, nextAttackTime = 0f;
+	private float attackRate = 1f, nextAttackTime = 0f;
 	private int jumpCount, attackCount;
 	private bool move = true;
 	
@@ -48,8 +50,9 @@ public class alfonso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && Time.time >= nextAttackTime)
 		{
+			anim.SetBool("isRun", false);
 			anim.SetTrigger("attack");
 			//anim.SetTrigger("attack2");
 			
@@ -59,7 +62,7 @@ public class alfonso : MonoBehaviour
 				enemy.GetComponent<Enemy>().TakeDamage(15f);
 			}
 			
-			//nextAttackTime = Time.time + 1f / attackRate;
+			nextAttackTime = Time.time + 1f / attackRate;
 			StartCoroutine(DontMove(0.77f));
 		}
 		
@@ -129,17 +132,21 @@ public class alfonso : MonoBehaviour
 	
 	public void Attack()
 	{
-		anim.SetTrigger("attack");
-		//anim.SetTrigger("attack2");
-			
-		Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
-		foreach(Collider enemy in hitEnemies)
+		if (Time.time >= nextAttackTime)
 		{
-			enemy.GetComponent<Enemy>().TakeDamage(15f);
+			anim.SetBool("isRun", false);
+			anim.SetTrigger("attack");
+			//anim.SetTrigger("attack2");
+				
+			Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
+			foreach(Collider enemy in hitEnemies)
+			{
+				enemy.GetComponent<Enemy>().TakeDamage(15f);
+			}
+				
+			nextAttackTime = Time.time + 1f / attackRate;
+			StartCoroutine(DontMove(0.77f));	
 		}
-			
-		//nextAttackTime = Time.time + 1f / attackRate;
-		StartCoroutine(DontMove(0.77f));
 	}
     
     void OnCollisionEnter(Collision collision)
@@ -191,9 +198,25 @@ public class alfonso : MonoBehaviour
 			Destroy(collision.gameObject);
 		}
 		
+		if (collision.gameObject.tag == "Zoom")
+		{
+			camera.target = collision.gameObject;
+			camera.inZoomArea = true;
+			camera.zoomInFOV = 70f;
+		}
+		
 		if (collision.gameObject.tag == "Finish")
 		{
 			level.isComplete = true;
+		}
+	}
+	
+	void OnTriggerExit(Collider collision)
+    {	
+		if (collision.gameObject.tag == "Zoom")
+		{
+			camera.target = gameObject;
+			camera.inZoomArea = false;
 		}
 	}
 	
