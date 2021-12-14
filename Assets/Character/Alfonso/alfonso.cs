@@ -52,25 +52,13 @@ public class alfonso : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G) && Time.time >= nextAttackTime)
 		{
-			anim.SetBool("isRun", false);
-			anim.SetTrigger("attack");
-			//anim.SetTrigger("attack2");
-			
-			Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
-			foreach(Collider enemy in hitEnemies)
-			{
-				enemy.GetComponent<Enemy>().TakeDamage(15f);
-			}
-			
-			nextAttackTime = Time.time + 1f / attackRate;
-			StartCoroutine(DontMove(0.77f));
+			Attack();
 		}
 		
-		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1 && move == true)
+		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2 && move == true)
 		{
 			jumpCount++;
-			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
-			else if (jumpCount == 2) playerRigidbody.velocity = Vector2.up * 14f;
+			if(jumpCount <= 2) playerRigidbody.velocity = Vector2.up * 18f;
 		}
     }
     
@@ -84,8 +72,19 @@ public class alfonso : MonoBehaviour
 		} 
 		else 
 		{
+			if(jumpCount == 0) jumpCount = 1;
 			anim.SetBool("isJump", true);
 		} 
+		
+		if(anim.GetBehaviour<alfonsoAttack>().attack == true)
+		{
+			anim.GetBehaviour<alfonsoAttack>().attack = false;
+			Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
+			foreach(Collider enemy in hitEnemies)
+			{
+				enemy.GetComponent<Enemy>().TakeDamage(15f);
+			}
+		}
 		
 		if(move == true) 
 		{
@@ -122,11 +121,10 @@ public class alfonso : MonoBehaviour
     
     public void Jump()
     {
-		if (jumpCount < 1 && move == true)
+		if (jumpCount < 2 && move == true)
 		{
 			jumpCount++;
-			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
-			else if (jumpCount == 2) playerRigidbody.velocity = Vector2.up * 14f;
+			if(jumpCount <= 2) playerRigidbody.velocity = Vector2.up * 18f;
 		}
 	}
 	
@@ -138,14 +136,8 @@ public class alfonso : MonoBehaviour
 			anim.SetTrigger("attack");
 			//anim.SetTrigger("attack2");
 				
-			Collider[] hitEnemies = Physics.OverlapSphere(hitBox.position, attackRange, whatIsEnemy);
-			foreach(Collider enemy in hitEnemies)
-			{
-				enemy.GetComponent<Enemy>().TakeDamage(15f);
-			}
-				
 			nextAttackTime = Time.time + 1f / attackRate;
-			StartCoroutine(DontMove(0.77f));	
+			StartCoroutine(DontMove(1f));	
 		}
 	}
     
@@ -200,9 +192,10 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "Zoom")
 		{
-			camera.target = collision.gameObject;
+			ZoomArea zoomArea = collision.gameObject.GetComponent<ZoomArea>();
+			if(zoomArea.changeTarget == true) camera.target = zoomArea.zoomTarget;
 			camera.inZoomArea = true;
-			camera.zoomInFOV = 70f;
+			camera.zoomInFOV = zoomArea.cameraFOV;
 		}
 		
 		if (collision.gameObject.tag == "Finish")

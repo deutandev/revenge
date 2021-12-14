@@ -23545,6 +23545,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RagdollVersion: {fileID: 6149703848252027619, guid: 5fdec9c7e8ea2d75c9e0a4dd951e5c34,
     type: 3}
+  camera: {fileID: 0}
+  LeftButton: {fileID: 0}
+  RightButton: {fileID: 0}
+  level: {fileID: 0}
   groundCheck: {fileID: 2577193465853446081}
   hitBox: {fileID: 2577193465862348587}
   whatIsGround:
@@ -23554,7 +23558,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   landRadius: 1
-  attackRange: 3
+  attackRange: 2.5
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}
   healthBar: {fileID: 0}
@@ -32075,7 +32079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2577193465862348586}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -4.42, y: 6.07, z: 0}
+  m_LocalPosition: {x: -5.5, y: 6.07, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2577193464060915753}

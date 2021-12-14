@@ -6,6 +6,7 @@ public class spider : Enemy
 {
 	public Material[] defaultMaterial;
 	public Material hitEffect;
+	public ParticleSystem slashEffect;
 	private Material[] hitMaterial = new Material[6];
 	public SkinnedMeshRenderer model;
 	string direction;
@@ -27,7 +28,11 @@ public class spider : Enemy
     // Update is called once per frame
     void Update()
     {
-		if(State == EnemyState.Damaged) model.materials = hitMaterial;
+		if(State == EnemyState.Damaged) 
+		{
+			model.materials = hitMaterial;
+			slashEffect.Play();
+		}
 		else if (State == EnemyState.Idle) model.materials = defaultMaterial;
 		
         if (enemyRigidbody.position.x >= startPos + widthArea)

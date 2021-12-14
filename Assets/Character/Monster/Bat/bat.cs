@@ -7,6 +7,8 @@ public class bat : Enemy
 	public Material[] defaultMaterial;
 	public Material hitEffect;
 	public SkinnedMeshRenderer[] model;
+	
+	public ParticleSystem slashEffect;
 	 
 	private Rigidbody batRigidbody;
 	private Transform batTransform;
@@ -32,6 +34,7 @@ public class bat : Enemy
 			{
 				model[i].material = hitEffect;
 			}
+			slashEffect.Play();
 		} 
 		else if (State == EnemyState.Idle)
 		{
