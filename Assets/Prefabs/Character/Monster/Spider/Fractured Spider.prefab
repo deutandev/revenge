@@ -4813,19 +4813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3e3241abb2fded1900e5b26fa088f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childCol:
-  - {fileID: 5985148091843266847}
-  - {fileID: 5985148091843266845}
-  - {fileID: 5985148091843266915}
-  - {fileID: 5985148091843266913}
-  - {fileID: 5985148091843266919}
-  - {fileID: 5985148091843266917}
-  - {fileID: 5985148091843266923}
-  - {fileID: 5985148091843266921}
-  - {fileID: 5985148091843266927}
-  - {fileID: 5985148091843266925}
-  - {fileID: 5985148091843266931}
-  - {fileID: 5985148091843266929}
 --- !u!1 &5985148091843301346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,9 +4826,10 @@ GameObject:
   - component: {fileID: 5985148091841368354}
   - component: {fileID: 5985148091843266846}
   - component: {fileID: 5985148091843266847}
+  - component: {fileID: 6185960503489488146}
   m_Layer: 0
   m_Name: LABA LABA
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4925,7 +4913,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266847
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4940,6 +4928,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &6185960503489488146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,9 +4953,10 @@ GameObject:
   - component: {fileID: 5985148091841368358}
   - component: {fileID: 5985148091843266914}
   - component: {fileID: 5985148091843266915}
+  - component: {fileID: 2261032726512010562}
   m_Layer: 0
   m_Name: LABA LABA.002
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5034,7 +5035,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5049,6 +5050,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300004, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &2261032726512010562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,9 +5075,10 @@ GameObject:
   - component: {fileID: 5985148091841368352}
   - component: {fileID: 5985148091843266844}
   - component: {fileID: 5985148091843266845}
+  - component: {fileID: 8606159907080113193}
   m_Layer: 0
   m_Name: LABA LABA.001
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5143,7 +5157,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5158,6 +5172,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &8606159907080113193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,9 +5197,10 @@ GameObject:
   - component: {fileID: 5985148091841368362}
   - component: {fileID: 5985148091843266918}
   - component: {fileID: 5985148091843266919}
+  - component: {fileID: 6046150835271062284}
   m_Layer: 0
   m_Name: LABA LABA.004
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5252,7 +5279,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5267,6 +5294,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300008, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &6046150835271062284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,9 +5319,10 @@ GameObject:
   - component: {fileID: 5985148091841368356}
   - component: {fileID: 5985148091843266912}
   - component: {fileID: 5985148091843266913}
+  - component: {fileID: 535687793649363125}
   m_Layer: 0
   m_Name: LABA LABA.003
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5361,7 +5401,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266913
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5376,6 +5416,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300006, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &535687793649363125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301356
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,9 +5441,10 @@ GameObject:
   - component: {fileID: 5985148091841368366}
   - component: {fileID: 5985148091843266922}
   - component: {fileID: 5985148091843266923}
+  - component: {fileID: 7014673647549961360}
   m_Layer: 0
   m_Name: LABA LABA.006
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5470,7 +5523,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5485,6 +5538,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300012, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &7014673647549961360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5498,9 +5563,10 @@ GameObject:
   - component: {fileID: 5985148091841368360}
   - component: {fileID: 5985148091843266916}
   - component: {fileID: 5985148091843266917}
+  - component: {fileID: 7240534673599904214}
   m_Layer: 0
   m_Name: LABA LABA.005
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5579,7 +5645,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266917
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5594,6 +5660,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300010, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &7240534673599904214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,9 +5685,10 @@ GameObject:
   - component: {fileID: 5985148091841368370}
   - component: {fileID: 5985148091843266926}
   - component: {fileID: 5985148091843266927}
+  - component: {fileID: 1411107877476676373}
   m_Layer: 0
   m_Name: LABA LABA.008
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5688,7 +5767,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266927
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5703,6 +5782,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300016, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &1411107877476676373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5716,9 +5807,10 @@ GameObject:
   - component: {fileID: 5985148091841368364}
   - component: {fileID: 5985148091843266920}
   - component: {fileID: 5985148091843266921}
+  - component: {fileID: 6421736863196781019}
   m_Layer: 0
   m_Name: LABA LABA.007
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5797,7 +5889,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266921
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5812,6 +5904,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300014, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &6421736863196781019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,9 +5929,10 @@ GameObject:
   - component: {fileID: 5985148091841368374}
   - component: {fileID: 5985148091843266930}
   - component: {fileID: 5985148091843266931}
+  - component: {fileID: 5723666132394825446}
   m_Layer: 0
   m_Name: LABA LABA.010
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5906,7 +6011,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266931
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5921,6 +6026,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300020, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &5723666132394825446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301366
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,9 +6051,10 @@ GameObject:
   - component: {fileID: 5985148091841368368}
   - component: {fileID: 5985148091843266924}
   - component: {fileID: 5985148091843266925}
+  - component: {fileID: 5570586625145787830}
   m_Layer: 0
   m_Name: LABA LABA.009
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6015,7 +6133,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266925
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6030,6 +6148,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300018, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &5570586625145787830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5985148091843301370
 GameObject:
   m_ObjectHideFlags: 0
@@ -6043,9 +6173,10 @@ GameObject:
   - component: {fileID: 5985148091841368372}
   - component: {fileID: 5985148091843266928}
   - component: {fileID: 5985148091843266929}
+  - component: {fileID: 1350391809735888694}
   m_Layer: 0
   m_Name: LABA LABA.011
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6124,7 +6255,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &5985148091843266929
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6139,6 +6270,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300022, guid: 833cdee94278e04c381d6c09cc5f0a9a, type: 3}
+--- !u!114 &1350391809735888694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985148091843301370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8365408584552307608
 GameObject:
   m_ObjectHideFlags: 0

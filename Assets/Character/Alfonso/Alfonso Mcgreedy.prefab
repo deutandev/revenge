@@ -23431,7 +23431,7 @@ GameObject:
   - component: {fileID: 2577193464060521132}
   m_Layer: 0
   m_Name: Alfonso Mcgreedy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23529,8 +23529,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 10, z: 1}
-  m_Center: {x: 0, y: 4.8, z: 0}
+  m_Size: {x: 3, y: 10.777047, z: 3.1894984}
+  m_Center: {x: -0, y: 5.188524, z: -0.088763475}
 --- !u!114 &2577193464060521132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32079,7 +32079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2577193465862348586}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -5.5, y: 6.07, z: 0}
+  m_LocalPosition: {x: -6, y: 6.07, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2577193464060915753}
