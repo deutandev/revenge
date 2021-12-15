@@ -42,7 +42,7 @@ public class FollowTarget : MonoBehaviour
     {
 		if(currentFOV < zoomInFOV)
 		{
-			currentFOV += (smoothZoom * Time.deltaTime);
+			currentFOV += ((zoomInFOV * 0.3f) * Time.deltaTime);
 			Camera.main.fieldOfView = currentFOV;
 		}
 	}
