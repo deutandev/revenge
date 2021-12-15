@@ -4768,9 +4768,10 @@ GameObject:
   - component: {fileID: 6405343377731481270}
   - component: {fileID: 6405343376071388215}
   - component: {fileID: 6405343376071388201}
+  - component: {fileID: 4756911126529667113}
   m_Layer: 0
   m_Name: WingBone.001
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4864,6 +4865,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300014, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &4756911126529667113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,9 +4890,10 @@ GameObject:
   - component: {fileID: 6405343377731481256}
   - component: {fileID: 6405343376180626871}
   - component: {fileID: 6405343376180626857}
+  - component: {fileID: 287001533538016332}
   m_Layer: 0
   m_Name: WingBone.002
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4973,6 +4987,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300016, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &287001533538016332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,9 +5012,10 @@ GameObject:
   - component: {fileID: 6405343377731481258}
   - component: {fileID: 6405343377888025041}
   - component: {fileID: 6405343377888025043}
+  - component: {fileID: 1536647088956901593}
   m_Layer: 0
   m_Name: WingBone.003
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5082,6 +5109,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300018, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &1536647088956901593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,9 +5134,10 @@ GameObject:
   - component: {fileID: 6405343377731481278}
   - component: {fileID: 6405343377578506829}
   - component: {fileID: 6405343377578506831}
+  - component: {fileID: 3763965511823304432}
   m_Layer: 0
   m_Name: WIng1
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5191,6 +5231,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300006, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &3763965511823304432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,9 +5256,10 @@ GameObject:
   - component: {fileID: 6405343377731481264}
   - component: {fileID: 6405343375888065718}
   - component: {fileID: 6405343375888065704}
+  - component: {fileID: 6042550052846982974}
   m_Layer: 0
   m_Name: Wing2
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5300,6 +5353,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300008, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &6042550052846982974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,9 +5378,10 @@ GameObject:
   - component: {fileID: 6405343377731481266}
   - component: {fileID: 6405343376158286562}
   - component: {fileID: 6405343376158286564}
+  - component: {fileID: 5425139814327968597}
   m_Layer: 0
   m_Name: Wing3
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5409,6 +5475,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300010, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &5425139814327968597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677174
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,9 +5500,10 @@ GameObject:
   - component: {fileID: 6405343377731481268}
   - component: {fileID: 6405343376102727170}
   - component: {fileID: 6405343376102727172}
+  - component: {fileID: 7607104578167875812}
   m_Layer: 0
   m_Name: WingBone
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5518,6 +5597,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300004, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &7607104578167875812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,9 +5622,10 @@ GameObject:
   - component: {fileID: 6405343377731481272}
   - component: {fileID: 6405343376182200892}
   - component: {fileID: 6405343376182200894}
+  - component: {fileID: 2003594653130345443}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5627,6 +5719,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &2003594653130345443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677178
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,9 +5744,10 @@ GameObject:
   - component: {fileID: 6405343377731481274}
   - component: {fileID: 6405343377031001301}
   - component: {fileID: 6405343377031001303}
+  - component: {fileID: 3990238195890520438}
   m_Layer: 0
   m_Name: Body.002
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5736,6 +5841,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300012, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &3990238195890520438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,9 +5866,10 @@ GameObject:
   - component: {fileID: 6405343377731481276}
   - component: {fileID: 6405343377060172724}
   - component: {fileID: 6405343377060172726}
+  - component: {fileID: 1292998549432798554}
   m_Layer: 0
   m_Name: Ear
-  m_TagString: Untagged
+  m_TagString: Fracture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5845,6 +5963,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 0d8b1dfbb5f184d539090c154f72be29, type: 3}
+--- !u!114 &1292998549432798554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405343377733677180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f009a6d233790204825a10d9746d177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405343377733677182
 GameObject:
   m_ObjectHideFlags: 0
