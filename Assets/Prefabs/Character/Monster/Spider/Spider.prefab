@@ -2428,7 +2428,7 @@ MonoBehaviour:
   - {fileID: 2100006, guid: 7278194b1f5135dbda910d36b653003a, type: 3}
   - {fileID: 2100008, guid: 94ba469d93f2eaa65a034b4e0ab1b6f8, type: 3}
   - {fileID: 2100010, guid: 94ba469d93f2eaa65a034b4e0ab1b6f8, type: 3}
-  hitEffect: {fileID: 2100000, guid: 64c401742330d5047b88899bf369540b, type: 2}
+  hitEffect: {fileID: 2100000, guid: ba019f3b0a6c4d5f8ba3f0be4871231d, type: 2}
   slashEffect: {fileID: 9164187968744443697}
   model: {fileID: 1279180797855758321}
   speed: 120
@@ -2902,7 +2902,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9607843, g: 0.02745098, b: 0.02745098, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0, b: 0, a: 1}
@@ -12414,7 +12414,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9607843, g: 0.02745098, b: 0.02745098, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
