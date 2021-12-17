@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class FoldablePlatform : MonoBehaviour
 {
     public GameObject InteractButton;
-    [SerializeField] private Animator Lever = null;
+    private Animator Lever;
     public List<GameObject> Platforms;
     [SerializeField] private bool opened = false;
+    
+    private void Start()
+    {
+		Lever = GetComponent<Animator>();
+	}
 
     private void OnTriggerEnter(Collider other)
     {
