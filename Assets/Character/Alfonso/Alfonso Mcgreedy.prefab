@@ -23557,7 +23557,7 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  landRadius: 1
+  landRadius: 0.8
   attackRange: 2.5
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}

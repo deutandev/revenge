@@ -178,11 +178,11 @@ public class alfonso : MonoBehaviour
 			float collisionPosX = collision.gameObject.transform.position.x;
 			if (playerTransform.position.x > collisionPosX)
 			{
-				playerRigidbody.AddForce(600f, 1600f, 0);	
+				playerRigidbody.AddForce(600f, 1000f, 0);	
 			}
 			else
 			{
-				playerRigidbody.AddForce(-600f, 1600f, 0);	
+				playerRigidbody.AddForce(-600f, 1000f, 0);	
 			}
 			
 			StartCoroutine(TakeDamage(20f));
