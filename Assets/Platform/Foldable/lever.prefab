@@ -156,6 +156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160fc3685fb91968eb626f15c6e4272d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractButton: {fileID: 0}
+  Lever: {fileID: 0}
+  Platforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  opened: 0
 --- !u!1 &7517139072986119356
 GameObject:
   m_ObjectHideFlags: 0

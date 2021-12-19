@@ -141,10 +141,10 @@ public class alfonso : MonoBehaviour
 	
 	public void AnimateAttack()
 	{
-		if(isGrounded == false) anim.SetTrigger("attack3");
-		else 
+		if (Time.time >= nextAttackTime)
 		{
-			if (Time.time >= nextAttackTime)
+			if(isGrounded == false) anim.SetTrigger("attack3");
+			else 
 			{
 				attackCount++;
 				anim.SetBool("isRun", false);
@@ -154,16 +154,12 @@ public class alfonso : MonoBehaviour
 					anim.SetTrigger("attack2");
 					attackCount = 0;
 				}
-				
-				//anim.SetTrigger("attack2");
-				//anim.SetTrigger("attack3");
-					
+						
 				nextAttackTime = Time.time + 1f / attackRate;
-				StartCoroutine(DontMove(1f));	
-			}
-			else attackCount = 0;
+				StartCoroutine(DontMove(1f));
+			}	
 		}
-		
+		else attackCount = 0;
 	}
 	
 	private void Attack()
@@ -182,11 +178,11 @@ public class alfonso : MonoBehaviour
 			float collisionPosX = collision.gameObject.transform.position.x;
 			if (playerTransform.position.x > collisionPosX)
 			{
-				playerRigidbody.AddForce(600f, 1600f, 0);	
+				playerRigidbody.AddForce(600f, 1000f, 0);	
 			}
 			else
 			{
-				playerRigidbody.AddForce(-600f, 1600f, 0);	
+				playerRigidbody.AddForce(-600f, 1000f, 0);	
 			}
 			
 			StartCoroutine(TakeDamage(20f));
