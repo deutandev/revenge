@@ -12,6 +12,7 @@ TagManager:
   - Diamond
   - Zoom
   - Fracture
+  - Hint
   layers:
   - Default
   - TransparentFX

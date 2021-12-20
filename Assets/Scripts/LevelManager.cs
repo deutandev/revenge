@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
+	public PostProcessVolume postProcess;
 	public Text coinUI;
 	public Slider healthBar;
+	public RectTransform[] UICanvas;
 	public Transform spiders, bats;
 	
 	private int totalEnemy, currentEnemy;
