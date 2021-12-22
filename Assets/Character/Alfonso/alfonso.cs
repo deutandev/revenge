@@ -49,17 +49,10 @@ public class alfonso : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
+    {	
+		if (Input.GetKeyDown(KeyCode.G))
 		{
 			AnimateAttack();
-		}
-		
-		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2 && move == true)
-		{
-			jumpCount++;
-			if(jumpCount <= 2) playerRigidbody.velocity = Vector2.up * 18f;
-			if(jumpCount == 2) anim.SetTrigger("jump2");
 		}
     }
     
@@ -108,7 +101,7 @@ public class alfonso : MonoBehaviour
 			
 			Move(h);
 			Animating(h);	
-		}
+		}	
     }
     
     public void Move(float h)
@@ -146,6 +139,7 @@ public class alfonso : MonoBehaviour
 			if(isGrounded == false) anim.SetTrigger("attack3");
 			else 
 			{
+				move = false;
 				attackCount++;
 				anim.SetBool("isRun", false);
 				if(attackCount == 1) anim.SetTrigger("attack");
@@ -156,7 +150,7 @@ public class alfonso : MonoBehaviour
 				}
 						
 				nextAttackTime = Time.time + 1f / attackRate;
-				StartCoroutine(DontMove(1f));
+				StartCoroutine(DontMove(0.5f));
 			}	
 		}
 		else attackCount = 0;
