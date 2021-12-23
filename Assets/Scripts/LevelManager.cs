@@ -7,7 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
-	public PostProcessVolume postProcess;
+	public Animator vignette;
 	public Text coinUI;
 	public Slider healthBar;
 	public RectTransform[] UICanvas;
@@ -54,8 +54,26 @@ public class LevelManager : MonoBehaviour
 			Debug.Log(star);
 			completePanel.SetActive(true);
 		}
-        else if(isGameover == true) gameOverPanel.SetActive(true);
+        else if(isGameover == true)
+        {
+			StartCoroutine("GameOver");
+		}
     }
+    
+    IEnumerator GameOver()
+    {
+		vignette.SetTrigger("gameOver");
+		foreach (RectTransform ui in UICanvas)
+		{
+			ui.localScale = new Vector3(0, 0, 0);
+		}
+		gameOverPanel.transform.localScale = new Vector3(1, 1, 1);
+		
+		yield return new WaitForSeconds(2f);
+		
+		Animator anim = gameOverPanel.GetComponent<Animator>();
+		anim.SetTrigger("open");
+	}
     
     private bool confirmStar(Criterion[] criterion)
     {

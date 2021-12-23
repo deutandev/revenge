@@ -13,6 +13,7 @@ TagManager:
   - Zoom
   - Fracture
   - Hint
+  - HealthPotion
   layers:
   - Default
   - TransparentFX

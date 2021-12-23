@@ -23557,7 +23557,7 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  landRadius: 0.8
+  landRadius: 1
   attackRange: 2.5
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}
@@ -32040,7 +32040,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2577193465853446081
 Transform:
   m_ObjectHideFlags: 0
