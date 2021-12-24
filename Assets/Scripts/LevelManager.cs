@@ -45,14 +45,7 @@ public class LevelManager : MonoBehaviour
 		currentEnemy = spiders.childCount + bats.childCount;
         if(isComplete == true)
         {
-			star = 1;
-			if(confirmStar(twoStar) == true)
-			{
-				star = 2;
-				if(confirmStar(threeStar) == true) star = 3;
-			}
-			Debug.Log(star);
-			completePanel.SetActive(true);
+			StartCoroutine("LevelComplete");
 		}
         else if(isGameover == true)
         {
@@ -72,6 +65,28 @@ public class LevelManager : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		
 		Animator anim = gameOverPanel.GetComponent<Animator>();
+		anim.SetTrigger("open");
+	}
+	
+	IEnumerator LevelComplete()
+	{
+		foreach (RectTransform ui in UICanvas)
+		{
+			ui.localScale = new Vector3(0, 0, 0);
+		}
+		star = 1;
+		if(confirmStar(twoStar) == true)
+		{
+			star = 2;
+			if(confirmStar(threeStar) == true) star = 3;
+		}
+		Debug.Log(star);
+			
+		completePanel.transform.localScale = new Vector3(1, 1, 1);
+			
+		yield return new WaitForSeconds(0.1f);
+			
+		Animator anim = completePanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
 	}
     
