@@ -10078,8 +10078,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 2577193464060917711}
   m_AABB:
-    m_Center: {x: -0.0031844918, y: 0.0026775384, z: 0.028657753}
-    m_Extent: {x: 0.02139089, y: 0.024827048, z: 0.023000065}
+    m_Center: {x: -0.00015592575, y: 0.004905332, z: 0.07166414}
+    m_Extent: {x: 0.012600746, y: 0.01799121, z: 0.015709694}
   m_DirtyAABB: 0
 --- !u!1 &2577193464060486061
 GameObject:
@@ -23557,7 +23557,7 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  landRadius: 0.8
+  landRadius: 1
   attackRange: 2.5
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}

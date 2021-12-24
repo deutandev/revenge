@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class alfonsoRagdoll : MonoBehaviour
 {
-	public GameObject body;
+	public GameObject body, head;
 	private Rigidbody rb;
 	
     // Start is called before the first frame update

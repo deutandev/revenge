@@ -24,9 +24,7 @@ public class FollowTarget : MonoBehaviour
 
     // Update is called once per frame
     private void FixedUpdate()
-    {
-		if(target == null) target = GameObject.Find("Alfonso Mcgreedy (ragdoll version)(Clone)");
-		
+    {	
 		Vector3 targetPosition = target.transform.position + offset;
 		
 		if(target.transform.position.x <= minWorldRange) targetPosition.x = transform.position.x;
