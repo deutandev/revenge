@@ -7,7 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
-	public Animator vignette;
+	public Animator vignette, blur;
 	public Text coinUI;
 	public Slider healthBar;
 	public RectTransform[] UICanvas;
@@ -89,6 +89,26 @@ public class LevelManager : MonoBehaviour
 		Animator anim = completePanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
 	}
+	
+	IEnumerator GameResult()
+	{
+		Animator anim = completePanel.GetComponent<Animator>();
+		anim.SetTrigger("close");
+		
+		yield return new WaitForSeconds(0.4f);
+		
+		blur.SetTrigger("blurIn");
+		
+		yield return new WaitForSeconds(0.1f);
+		
+		anim.SetTrigger("openResult");
+		
+		yield return new WaitForSeconds(1.2f);
+		
+		anim.SetInteger("star", star);
+	}
+	
+	public void showGameResult() {StartCoroutine("GameResult");}
     
     private bool confirmStar(Criterion[] criterion)
     {

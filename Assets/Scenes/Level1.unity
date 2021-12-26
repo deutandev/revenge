@@ -1994,7 +1994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &97645863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2119,7 +2119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &105436922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3215,7 +3215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &140045552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27972,7 +27972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1074581491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33398,6 +33398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vignette: {fileID: 1122412276}
+  blur: {fileID: 682477870}
   coinUI: {fileID: 117602563}
   healthBar: {fileID: 1990024435}
   UICanvas:
@@ -49018,7 +49019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomTarget: {fileID: 1043473317}
-  cameraFOV: 82
+  cameraFOV: 76
   changeTarget: 0
 --- !u!65 &1669075297
 BoxCollider:
@@ -49879,8 +49880,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: GoToCurrentScene
+      - m_Target: {fileID: 1218379998}
+        m_MethodName: showGameResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -58681,7 +58682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1987694260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62774,7 +62775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2096437651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64726,7 +64727,7 @@ PrefabInstance:
     - target: {fileID: 4477641155077808909, guid: 57ce5daff36cb011fb1f71779dd3909f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4477641155581110423, guid: 57ce5daff36cb011fb1f71779dd3909f,
         type: 3}
@@ -64850,7 +64851,7 @@ PrefabInstance:
     - target: {fileID: 5253413177620614226, guid: 1cf75745265ba852694399850cc2c32e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5253413178073935029, guid: 1cf75745265ba852694399850cc2c32e,
         type: 3}
@@ -64960,12 +64961,12 @@ PrefabInstance:
     - target: {fileID: 5253413178763371093, guid: 1cf75745265ba852694399850cc2c32e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5253413178763371093, guid: 1cf75745265ba852694399850cc2c32e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cf75745265ba852694399850cc2c32e, type: 3}
