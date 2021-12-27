@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 	private int totalEnemy, currentEnemy;
 	
 	[HideInInspector]
-	public bool isComplete = false, isGameover = false;
+	public bool isComplete = false, isGameover = false, end = false;
 	public GameObject gameOverPanel, completePanel;
 	
 	private int star = 0;
@@ -43,8 +43,9 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
 		currentEnemy = spiders.childCount + bats.childCount;
-        if(isComplete == true)
+        if(isComplete == true && end == false)
         {
+			end = true;
 			StartCoroutine("LevelComplete");
 		}
         else if(isGameover == true)
@@ -75,12 +76,8 @@ public class LevelManager : MonoBehaviour
 			ui.localScale = new Vector3(0, 0, 0);
 		}
 		star = 1;
-		if(confirmStar(twoStar) == true)
-		{
-			star = 2;
-			if(confirmStar(threeStar) == true) star = 3;
-		}
-		Debug.Log(star);
+		if(confirmStar(twoStar) == true) star++;
+		if(confirmStar(threeStar) == true) star++;
 			
 		completePanel.transform.localScale = new Vector3(1, 1, 1);
 			
@@ -107,6 +104,10 @@ public class LevelManager : MonoBehaviour
 		
 		anim.SetInteger("star", star);
 	}
+	
+	public void openPanel(GameObject panel) {panel.transform.localScale = new Vector3(1, 1, 1);}
+	
+	public void closePanel(GameObject panel) {panel.transform.localScale = new Vector3(0, 0, 0);}
 	
 	public void showGameResult() {StartCoroutine("GameResult");}
     
