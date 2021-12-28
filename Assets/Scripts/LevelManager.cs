@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
 	[HideInInspector]
 	public bool isComplete = false, isGameover = false, end = false;
 	public GameObject gameOverPanel, completePanel;
+	public GameObject[] MarkImage = new GameObject[3];
+	public GameObject[] MarkText = new GameObject[3];
 	
 	private int star = 0;
 	
@@ -78,6 +80,26 @@ public class LevelManager : MonoBehaviour
 		star = 1;
 		if(confirmStar(twoStar) == true) star++;
 		if(confirmStar(threeStar) == true) star++;
+		
+		for(int i=0; i<3; i++)
+		{
+			if(i < star)
+			{
+				GameObject completedImg = MarkImage[i].transform.Find("Completed Image").gameObject;
+				completedImg.SetActive(true);
+				
+				GameObject completedTxt = MarkText[i].transform.Find("Completed Text").gameObject;
+				completedTxt.SetActive(true);
+			}
+			else
+			{
+				GameObject failedImg = MarkImage[i].transform.Find("Failed Image").gameObject;
+				failedImg.SetActive(true);
+				
+				GameObject failedTxt = MarkText[i].transform.Find("Failed Text").gameObject;
+				failedTxt.SetActive(true);
+			}
+		}
 			
 		completePanel.transform.localScale = new Vector3(1, 1, 1);
 			
