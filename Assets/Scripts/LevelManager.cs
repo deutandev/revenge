@@ -7,6 +7,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
+	public AudioSource bgMusic;
+	public AudioClip gameoverMusic, completeMusic;
 	public Animator vignette, blur;
 	public Text coinUI;
 	public Slider healthBar;
@@ -50,14 +52,16 @@ public class LevelManager : MonoBehaviour
 			end = true;
 			StartCoroutine("LevelComplete");
 		}
-        else if(isGameover == true)
+        else if(isGameover == true && end == false)
         {
+			end = true;
 			StartCoroutine("GameOver");
 		}
     }
     
     IEnumerator GameOver()
     {
+		bgMusic.Stop();
 		vignette.SetTrigger("gameOver");
 		foreach (RectTransform ui in UICanvas)
 		{
@@ -65,7 +69,13 @@ public class LevelManager : MonoBehaviour
 		}
 		gameOverPanel.transform.localScale = new Vector3(1, 1, 1);
 		
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(0.5f);
+		
+		bgMusic.loop = false;
+		bgMusic.clip = gameoverMusic;
+		bgMusic.Play();
+		
+		yield return new WaitForSeconds(1.5f);
 		
 		Animator anim = gameOverPanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
@@ -73,6 +83,7 @@ public class LevelManager : MonoBehaviour
 	
 	IEnumerator LevelComplete()
 	{
+		bgMusic.Stop();
 		foreach (RectTransform ui in UICanvas)
 		{
 			ui.localScale = new Vector3(0, 0, 0);
@@ -107,6 +118,11 @@ public class LevelManager : MonoBehaviour
 			
 		Animator anim = completePanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
+		
+		yield return new WaitForSeconds(1f);
+		bgMusic.loop = false;
+		bgMusic.clip = completeMusic;
+		bgMusic.Play();
 	}
 	
 	IEnumerator GameResult()
