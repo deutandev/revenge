@@ -8,18 +8,29 @@ public class alfonso : MonoBehaviour
 	private Rigidbody playerRigidbody;
 	private Transform playerTransform;
 	
+	[Header("Ragdoll Object")]
 	public GameObject RagdollVersion;
 	
+	[Header("Camera")]
 	public FollowTarget camera;
 	
+	[Header("Movement Button")]
     public PlayerButton LeftButton;
     public PlayerButton RightButton;
     
+    
+    [Header("Level Manager")]
     public LevelManager level;
 	
-	public Transform groundCheck, hitBox;
-	public LayerMask whatIsGround, whatIsEnemy;
-	public float landRadius, attackRange;
+	[Header("Hit Box")]
+	public Transform hitBox;
+	public LayerMask whatIsEnemy;
+	public float attackRange;
+	
+	[Header("Landing Mechanic")]
+	public Transform groundCheck;
+	public LayerMask whatIsGround;
+	public float landRadius;
 	Vector3 movement;
 	
 	private float attackRate = 2f, nextAttackTime = 0f;
@@ -27,14 +38,25 @@ public class alfonso : MonoBehaviour
 	private bool move = true, isGrounded = true;
 	
 	private Animator anim;
+	
+	[Header("Hit Effect")]
 	public Animator hitEffectAnimator;
 	
+	[Header("UI Coin & Health Bar")]
 	public Text coinUI;
 	public Slider healthBar;
 	
+	[Header("Alfonso Velocity")]
 	public float velocity = 5f;
 	private float health = 100;
 	private int coin = 0;
+	
+	[Header("Sound Effect")]
+	public AudioClip[] swingSound = new AudioClip[2];
+	public AudioClip[] healSound = new AudioClip[3];
+	public AudioClip coinSound, diamondSound;
+	
+	private AudioSource audio;
 	
     // Start is called before the first frame update
     void Start()
@@ -44,7 +66,10 @@ public class alfonso : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
+        audio = GetComponent<AudioSource>();
+        audio.playOnAwake = false;
 		healthBar.value = health;
+		anim.GetBehaviour<alfonsoAttack>().attack = false;
     }
 
     // Update is called once per frame
@@ -82,6 +107,7 @@ public class alfonso : MonoBehaviour
 		{
 			anim.GetBehaviour<alfonsoAttack>().attack = false;
 			Attack();
+			audio.PlayOneShot(swingSound[0], 1f);
 		}
 		
 		if(anim.GetBehaviour<alfonsoAttack4>().attack == true)
@@ -93,6 +119,7 @@ public class alfonso : MonoBehaviour
 		if(anim.GetBehaviour<alfonsoAttack2>().attack == true)
 		{
 			anim.GetBehaviour<alfonsoAttack2>().attack = false;
+			audio.PlayOneShot(swingSound[1], 1f);
 			Invoke("Attack", 0.15f);
 		}
 		
@@ -209,6 +236,7 @@ public class alfonso : MonoBehaviour
     {
 		if (collision.gameObject.tag == "Coin")
 		{
+			audio.PlayOneShot(coinSound, 1f);
 			coin++;
 			coinUI.text = coin.ToString();
 			Destroy(collision.gameObject);
@@ -216,6 +244,7 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "Diamond")
 		{
+			audio.PlayOneShot(diamondSound, 1f);
 			coin += 10;
 			coinUI.text = coin.ToString();
 			Destroy(collision.gameObject);
@@ -224,6 +253,11 @@ public class alfonso : MonoBehaviour
 		if (collision.gameObject.tag == "HealthPotion")
 		{
 			HealthPotion healPoint = collision.gameObject.GetComponent<HealthPotion>();
+			
+			if(healPoint.health == 15) audio.PlayOneShot(healSound[0], 1f);
+			else if(healPoint.health == 25) audio.PlayOneShot(healSound[1], 1f);
+			else if(healPoint.health == 40) audio.PlayOneShot(healSound[2], 1f);
+			
 			health += healPoint.health;
 			if(health > 100) health = 100;
 			healthBar.value = health;

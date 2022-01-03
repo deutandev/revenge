@@ -7,7 +7,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
-	public Animator vignette;
+	public AudioSource bgMusic;
+	public AudioClip gameoverMusic, completeMusic;
+	public Animator vignette, blur;
 	public Text coinUI;
 	public Slider healthBar;
 	public RectTransform[] UICanvas;
@@ -16,8 +18,10 @@ public class LevelManager : MonoBehaviour
 	private int totalEnemy, currentEnemy;
 	
 	[HideInInspector]
-	public bool isComplete = false, isGameover = false;
+	public bool isComplete = false, isGameover = false, end = false;
 	public GameObject gameOverPanel, completePanel;
+	public GameObject[] MarkImage = new GameObject[3];
+	public GameObject[] MarkText = new GameObject[3];
 	
 	private int star = 0;
 	
@@ -43,18 +47,21 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
 		currentEnemy = spiders.childCount + bats.childCount;
-        if(isComplete == true)
+        if(isComplete == true && end == false)
         {
+			end = true;
 			StartCoroutine("LevelComplete");
 		}
-        else if(isGameover == true)
+        else if(isGameover == true && end == false)
         {
+			end = true;
 			StartCoroutine("GameOver");
 		}
     }
     
     IEnumerator GameOver()
     {
+		bgMusic.Stop();
 		vignette.SetTrigger("gameOver");
 		foreach (RectTransform ui in UICanvas)
 		{
@@ -62,7 +69,13 @@ public class LevelManager : MonoBehaviour
 		}
 		gameOverPanel.transform.localScale = new Vector3(1, 1, 1);
 		
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(0.5f);
+		
+		bgMusic.loop = false;
+		bgMusic.clip = gameoverMusic;
+		bgMusic.Play();
+		
+		yield return new WaitForSeconds(1.5f);
 		
 		Animator anim = gameOverPanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
@@ -70,17 +83,34 @@ public class LevelManager : MonoBehaviour
 	
 	IEnumerator LevelComplete()
 	{
+		bgMusic.Stop();
 		foreach (RectTransform ui in UICanvas)
 		{
 			ui.localScale = new Vector3(0, 0, 0);
 		}
 		star = 1;
-		if(confirmStar(twoStar) == true)
+		if(confirmStar(twoStar) == true) star++;
+		if(confirmStar(threeStar) == true) star++;
+		
+		for(int i=0; i<3; i++)
 		{
-			star = 2;
-			if(confirmStar(threeStar) == true) star = 3;
+			if(i < star)
+			{
+				GameObject completedImg = MarkImage[i].transform.Find("Completed Image").gameObject;
+				completedImg.SetActive(true);
+				
+				GameObject completedTxt = MarkText[i].transform.Find("Completed Text").gameObject;
+				completedTxt.SetActive(true);
+			}
+			else
+			{
+				GameObject failedImg = MarkImage[i].transform.Find("Failed Image").gameObject;
+				failedImg.SetActive(true);
+				
+				GameObject failedTxt = MarkText[i].transform.Find("Failed Text").gameObject;
+				failedTxt.SetActive(true);
+			}
 		}
-		Debug.Log(star);
 			
 		completePanel.transform.localScale = new Vector3(1, 1, 1);
 			
@@ -88,7 +118,36 @@ public class LevelManager : MonoBehaviour
 			
 		Animator anim = completePanel.GetComponent<Animator>();
 		anim.SetTrigger("open");
+		
+		yield return new WaitForSeconds(1f);
+		bgMusic.loop = false;
+		bgMusic.clip = completeMusic;
+		bgMusic.Play();
 	}
+	
+	IEnumerator GameResult()
+	{
+		Animator anim = completePanel.GetComponent<Animator>();
+		anim.SetTrigger("close");
+		
+		yield return new WaitForSeconds(0.4f);
+		
+		blur.SetTrigger("blurIn");
+		
+		yield return new WaitForSeconds(0.1f);
+		
+		anim.SetTrigger("openResult");
+		
+		yield return new WaitForSeconds(1.2f);
+		
+		anim.SetInteger("star", star);
+	}
+	
+	public void openPanel(GameObject panel) {panel.transform.localScale = new Vector3(1, 1, 1);}
+	
+	public void closePanel(GameObject panel) {panel.transform.localScale = new Vector3(0, 0, 0);}
+	
+	public void showGameResult() {StartCoroutine("GameResult");}
     
     private bool confirmStar(Criterion[] criterion)
     {
