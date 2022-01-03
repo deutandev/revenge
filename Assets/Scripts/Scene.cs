@@ -78,7 +78,7 @@ public class Scene : MonoBehaviour
 		{
 			float progress = Mathf.Clamp01(operation.progress/0.9f);
 			progress *= 100;
-			progressText.text = progress.ToString() + "%";
+			progressText.text = progress.ToString("0.##") + "%";
 			yield return null;
 		}
 		

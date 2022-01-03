@@ -7,18 +7,26 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
+	[Header("Sound")]
 	public AudioSource bgMusic;
 	public AudioClip gameoverMusic, completeMusic;
+	
+	[Header("Animator")]
 	public Animator vignette, blur;
-	public Text coinUI;
-	public Slider healthBar;
-	public RectTransform[] UICanvas;
+	
+	[Header("Enemy List")]
 	public Transform spiders, bats;
 	
 	private int totalEnemy, currentEnemy;
 	
 	[HideInInspector]
 	public bool isComplete = false, isGameover = false, end = false;
+	
+	[Header("User Interface")]
+	public Text coinUI;
+	public Slider healthBar;
+	public RectTransform[] UICanvas;
+	
 	public GameObject gameOverPanel, completePanel;
 	public GameObject[] MarkImage = new GameObject[3];
 	public GameObject[] MarkText = new GameObject[3];
@@ -32,8 +40,14 @@ public class LevelManager : MonoBehaviour
 		public CriterionTypes criterionTypes;
 		public int criterionMinValue;
 	}
+	
+	[Header("Criterion Settings")]
+	
 	[SerializeField]
-	public Criterion[] twoStar, threeStar;
+	public Criterion[] twoStar;
+	
+	[SerializeField]
+	public Criterion[] threeStar;
 	
     // Start is called before the first frame update
     private void Start()
@@ -72,6 +86,7 @@ public class LevelManager : MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 		
 		bgMusic.loop = false;
+		bgMusic.volume = 0.8f;
 		bgMusic.clip = gameoverMusic;
 		bgMusic.Play();
 		
