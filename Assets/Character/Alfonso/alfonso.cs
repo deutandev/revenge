@@ -55,6 +55,7 @@ public class alfonso : MonoBehaviour
 	[Header("Sound Effect")]
 	public AudioClip[] swingSound = new AudioClip[2];
 	public AudioClip[] healSound = new AudioClip[3];
+	public AudioClip[] hurtSound = new AudioClip[2];
 	public AudioClip coinSound, diamondSound;
 	
 	private AudioSource audio;
@@ -82,11 +83,16 @@ public class alfonso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
-		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2 && move == true)
+		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
 		{
 			jumpCount++;
-			if(jumpCount <= 2) playerRigidbody.velocity = Vector2.up * 18f;
-			if(jumpCount == 2) anim.SetTrigger("jump2");
+			if(jumpCount == 1 && move == true) playerRigidbody.velocity = Vector2.up * 18f;
+			else if(jumpCount == 2)
+			{
+				if(move == false) move = true;
+				playerRigidbody.velocity = Vector2.up * 18f;
+				anim.SetInteger("jump", 2);
+			} 
 		}
 		
 		if (Input.GetKeyDown(KeyCode.G))
@@ -100,13 +106,14 @@ public class alfonso : MonoBehaviour
 		isGrounded = Physics.CheckSphere(groundCheck.position, landRadius, whatIsGround);
 		if(isGrounded == true)
 		{
+			move = true;
 			jumpCount = 0;
-			anim.SetBool("isJump", false);
+			anim.SetInteger("jump", 0);
 		} 
 		else 
 		{
 			if(jumpCount == 0) jumpCount = 1;
-			anim.SetBool("isJump", true);
+			anim.SetInteger("jump", 1);
 		}
 		
 		
@@ -228,6 +235,8 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "Spike")
 		{
+			move = false;
+			jumpCount = 1;
 			int falDir = 0;
 			if(playerTransform.rotation.y == 1) falDir = 1;
 			else falDir = -1;
@@ -235,8 +244,6 @@ public class alfonso : MonoBehaviour
 			playerRigidbody.AddForce(800f * falDir, 2000f, 0);
 			
 			StartCoroutine(TakeDamage(20f));
-			
-			StartCoroutine(DontMove(1f));
 		}
     }
     
@@ -299,6 +306,12 @@ public class alfonso : MonoBehaviour
 	
 	IEnumerator TakeDamage(float damage)
 	{
+		if(health > 0)
+		{
+			int x = Random.Range(0, 2);
+			audio.PlayOneShot(hurtSound[x], 0.4f);	
+		}
+		
 		health -= damage;
 		healthBar.value = health;
 		

@@ -6,11 +6,19 @@ public class alfonsoRagdoll : MonoBehaviour
 {
 	public GameObject body, head;
 	private Rigidbody rb;
+	private AudioSource audio;
+	public AudioClip deathSound;
 	
     // Start is called before the first frame update
     void Start()
     {
 		rb = body.GetComponent<Rigidbody>();
+		audio = GetComponent<AudioSource>();
+		
+		if (PlayerPrefs.GetInt("sfx") == 0) audio.mute = true;
+		audio.PlayOneShot(deathSound, 0.4f);
+		
+		Debug.Log(PlayerPrefs.GetInt("sfx"));
 		
 		int falDir = 0;
 		if(transform.rotation.y == 1) falDir = -1;

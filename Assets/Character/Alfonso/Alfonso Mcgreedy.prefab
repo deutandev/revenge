@@ -23564,7 +23564,7 @@ MonoBehaviour:
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}
   healthBar: {fileID: 0}
-  velocity: 10
+  velocity: 14
   swingSound:
   - {fileID: 8300000, guid: 9bc5fcd99b4b55db7a5e78a6ab25ba2a, type: 3}
   - {fileID: 8300000, guid: aa47629a5b8111fd79e538b7f340dfed, type: 3}
@@ -23572,6 +23572,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ef99597e0c41007d5898b16b02c4dc04, type: 3}
   - {fileID: 8300000, guid: e0a0ee3a8f4f207289d3490c51b58f43, type: 3}
   - {fileID: 8300000, guid: 3190c763e47f836c38ad9e23bc349764, type: 3}
+  hurtSound:
+  - {fileID: 8300000, guid: 25ce97f63b0f68f28a6f46d5a3e2e319, type: 3}
+  - {fileID: 8300000, guid: 2af9a9207552c770ab34bee66686af6b, type: 3}
   coinSound: {fileID: 8300000, guid: 78495441b300d9af09e2601a9c7c82a7, type: 3}
   diamondSound: {fileID: 8300000, guid: b8032dcaa8da392269a083baff140c2b, type: 3}
 --- !u!82 &8671706688140824932

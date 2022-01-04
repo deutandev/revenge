@@ -27,14 +27,14 @@ public class AudioManager : MonoBehaviour
         {
 			foreach (AudioSource audio in musicAudio)
 			{
-				if(audio != null) audio.mute = true;
+				if(audio != null) audio.mute = false;
 			}
 		}
 		else if(PlayerPrefs.GetInt(music) == 0)
         {
 			foreach (AudioSource audio in musicAudio)
 			{
-				if(audio != null) audio.mute = false;
+				if(audio != null) audio.mute = true;
 			}
 		}
 		
@@ -42,14 +42,14 @@ public class AudioManager : MonoBehaviour
         {
 			foreach (AudioSource audio in sfxAudio)
 			{
-				if(audio != null) audio.mute = true;
+				if(audio != null) audio.mute = false;
 			}
 		}
 		else if(PlayerPrefs.GetInt(sfx) == 0)
         {
 			foreach (AudioSource audio in sfxAudio)
 			{
-				if(audio != null) audio.mute = false;
+				if(audio != null) audio.mute = true;
 			}
 		}
     }
