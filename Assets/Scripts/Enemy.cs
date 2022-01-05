@@ -11,13 +11,23 @@ public class Enemy : MonoBehaviour
 	public float health = 30;
 	public GameObject DestroyedVersion;
 	
-	void Start() 
+	public AudioClip[] hitSound = new AudioClip[2];
+	
+	private AudioSource audio;
+	
+	private void Start() 
 	{
 		SetIdle();
 	}
     
     public void TakeDamage(float damage)
 	{
+		int x = Random.Range(0, 2);
+		int y = PlayerPrefs.GetInt("music");
+		
+		audio = GetComponent<AudioSource>();
+		audio.PlayOneShot(hitSound[x], 0.4f);	
+			
 		Invoke("SetDamaged", 0.1f);
 		health = health - damage;
 		Invoke("SetIdle", 0.2f);

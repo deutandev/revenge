@@ -112,8 +112,11 @@ public class alfonso : MonoBehaviour
 		} 
 		else 
 		{
-			if(jumpCount == 0) jumpCount = 1;
-			anim.SetInteger("jump", 1);
+			if(jumpCount == 0)
+			{
+				jumpCount = 1;
+				anim.SetInteger("jump", 1);
+			}
 		}
 		
 		
@@ -199,7 +202,7 @@ public class alfonso : MonoBehaviour
 				}
 						
 				nextAttackTime = Time.time + 1f / attackRate;
-				StartCoroutine(DontMove(0.5f));
+				StartCoroutine(DontMove(1f));
 			}	
 		}
 		else attackCount = 0;
