@@ -22,13 +22,13 @@ public class Cutscene : MonoBehaviour
 	private int index = 0;
 	
 	[HideInInspector]
-	public bool end = false; 
+	public bool end = false;
 	
     // Start is called before the first frame update
     void Start()
     {
         string x = plot[index].dialogue;
-		StartCoroutine(ShowText(x));
+		StartCoroutine(ShowText(x, index));
     }
 
     // Update is called once per frame
@@ -38,9 +38,8 @@ public class Cutscene : MonoBehaviour
 		if (index == plot.Length) end = true;
 		else if(end == false)
 		{
-			Debug.Log(index);
 			string x = plot[index].dialogue;
-			StartCoroutine(ShowText(x));
+			StartCoroutine(ShowText(x, index));
 			
 			if(plot[index].name != "0")
 			{
@@ -52,13 +51,21 @@ public class Cutscene : MonoBehaviour
 		}
 	}
     
-    IEnumerator ShowText(string text)
+    IEnumerator ShowText(string text, int currentIndex)
 	{
 		dialogueText.text = "";
 		foreach (char c in text) 
 		{
-			dialogueText.text += c;
-			yield return new WaitForSeconds (0.01f);
+			if(currentIndex != index)
+			{
+				break;
+				yield break;
+			}
+			else 
+			{
+				dialogueText.text += c;
+				yield return new WaitForSeconds (0.01f);
+			}
 		}
 	}
 }

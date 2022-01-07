@@ -6,20 +6,9 @@ public class CutsceneManager : MonoBehaviour
 {
 	public Cutscene[] cutscene;
 	public Animator fade;
+	public Scene scene;
 	private int index = 0;
 	
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     public void StartChangeCutscene() 
     {
 		StartCoroutine(ChangeCutscene());
@@ -27,18 +16,22 @@ public class CutsceneManager : MonoBehaviour
     
     IEnumerator ChangeCutscene()
     {
-		if (cutscene[index].end == true)
+		if(cutscene[cutscene.Length-1].end == true)
+		{
+			scene.loadLevel(1);
+		}
+		else if (cutscene[index].end == true)
 		{
 			index++;
 			fade.SetTrigger("fadeIn");
 			
-			yield return new WaitForSeconds(0.25f);
+			yield return new WaitForSeconds(0.5f);
+				
+			fade.SetTrigger("fadeOut");
+			
+			yield return new WaitForSeconds(0.1f);
 			
 			cutscene[index].gameObject.SetActive(true);
-			
-			yield return new WaitForSeconds(0.2f);
-			
-			fade.SetTrigger("fadeOut");
 		}
 	}
 }
