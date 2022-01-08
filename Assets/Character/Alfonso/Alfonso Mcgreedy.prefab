@@ -23498,7 +23498,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2ef3bd61fd0ef6a3ab8b0b3af44dd36b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -23560,7 +23560,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  landRadius: 1
+  landRadius: 0.8
   hitEffectAnimator: {fileID: 0}
   coinUI: {fileID: 0}
   healthBar: {fileID: 0}

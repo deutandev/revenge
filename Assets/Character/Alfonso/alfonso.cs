@@ -35,7 +35,7 @@ public class alfonso : MonoBehaviour
 	
 	private float attackRate = 2f, nextAttackTime = 0f;
 	private int jumpCount, attackCount;
-	private bool move = true, isGrounded = true;
+	private bool move = true, isGrounded = true, hurt = false;
 	
 	private Animator anim;
 	
@@ -86,10 +86,10 @@ public class alfonso : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
 		{
 			jumpCount++;
-			if(jumpCount == 1 && move == true) playerRigidbody.velocity = Vector2.up * 18f;
+			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
 			else if(jumpCount == 2)
 			{
-				if(move == false) move = true;
+				if(hurt == true) hurt = false;
 				playerRigidbody.velocity = Vector2.up * 18f;
 				anim.SetInteger("jump", 2);
 			} 
@@ -106,7 +106,7 @@ public class alfonso : MonoBehaviour
 		isGrounded = Physics.CheckSphere(groundCheck.position, landRadius, whatIsGround);
 		if(isGrounded == true)
 		{
-			move = true;
+			hurt = false;
 			jumpCount = 0;
 			anim.SetInteger("jump", 0);
 		} 
@@ -124,6 +124,8 @@ public class alfonso : MonoBehaviour
 		{
 			anim.GetBehaviour<alfonsoAttack>().attack = false;
 			Attack();
+			
+			StartCoroutine(DontMove(0.7f));
 			audio.PlayOneShot(swingSound[0], 0.4f);
 		}
 		
@@ -132,16 +134,19 @@ public class alfonso : MonoBehaviour
 			anim.GetBehaviour<alfonsoAttack4>().attack = false;
 			Attack();
 			audio.PlayOneShot(swingSound[0], 0.4f);
+			anim.SetInteger("jump", 1);
 		}
 		
 		if(anim.GetBehaviour<alfonsoAttack2>().attack == true)
 		{
 			anim.GetBehaviour<alfonsoAttack2>().attack = false;
 			audio.PlayOneShot(swingSound[1], 0.4f);
+			
+			StartCoroutine(DontMove(0.7f));
 			Invoke("Attack", 0.15f);
 		}
 		
-		if(move == true) 
+		if(move == true && hurt == false) 
 		{
 			//Nilai Input Horizontal (-1,0,1)
 			float h = Input.GetAxisRaw("Horizontal");
@@ -176,11 +181,16 @@ public class alfonso : MonoBehaviour
     
     public void Jump()
     {
-		if (jumpCount < 2 && move == true)
+		if (jumpCount < 2)
 		{
 			jumpCount++;
-			if(jumpCount <= 2) playerRigidbody.velocity = Vector2.up * 18f;
-			if(jumpCount == 2) anim.SetTrigger("jump2");
+			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
+			else if(jumpCount == 2)
+			{
+				if(hurt == true) hurt = false;
+				playerRigidbody.velocity = Vector2.up * 18f;
+				anim.SetInteger("jump", 2);
+			} 
 		}
 	}
 	
@@ -188,7 +198,11 @@ public class alfonso : MonoBehaviour
 	{
 		if (Time.time >= nextAttackTime)
 		{
-			if(isGrounded == false) anim.SetTrigger("attack3");
+			if(isGrounded == false)
+			{
+				anim.SetTrigger("attack3");
+				nextAttackTime = Time.time + 2f / attackRate;
+			}
 			else 
 			{
 				move = false;
@@ -202,7 +216,6 @@ public class alfonso : MonoBehaviour
 				}
 						
 				nextAttackTime = Time.time + 1f / attackRate;
-				StartCoroutine(DontMove(1f));
 			}	
 		}
 		else attackCount = 0;
@@ -238,8 +251,10 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "Spike")
 		{
-			move = false;
+			hurt = true;
 			jumpCount = 1;
+			anim.SetInteger("jump", 1);
+			
 			int falDir = 0;
 			if(playerTransform.rotation.y == 1) falDir = 1;
 			else falDir = -1;
@@ -270,18 +285,25 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "HealthPotion")
 		{
-			healEffect.Play();
+			if(health == 100) 
+			{
+				Physics.IgnoreCollision(GetComponent<BoxCollider>(), collision.gameObject.GetComponent<CapsuleCollider>());
+			}
+			else 
+			{
+				healEffect.Play();
 			
-			HealthPotion healPoint = collision.gameObject.GetComponent<HealthPotion>();
-			
-			if(healPoint.health == 15) audio.PlayOneShot(healSound[0], 0.6f);
-			else if(healPoint.health == 25) audio.PlayOneShot(healSound[1], 0.6f);
-			else if(healPoint.health == 40) audio.PlayOneShot(healSound[2], 0.6f);
-			
-			health += healPoint.health;
-			if(health > 100) health = 100;
-			healthBar.value = health;
-			Destroy(collision.gameObject);
+				HealthPotion healPoint = collision.gameObject.GetComponent<HealthPotion>();
+				
+				if(healPoint.health == 15) audio.PlayOneShot(healSound[0], 0.6f);
+				else if(healPoint.health == 25) audio.PlayOneShot(healSound[1], 0.6f);
+				else if(healPoint.health == 40) audio.PlayOneShot(healSound[2], 0.6f);
+				
+				health += healPoint.health;
+				if(health > 100) health = 100;
+				healthBar.value = health;
+				Destroy(collision.gameObject);	
+			}
 		}
 		
 		if (collision.gameObject.tag == "Zoom")

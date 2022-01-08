@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
 		int y = PlayerPrefs.GetInt("music");
 		
 		audio = GetComponent<AudioSource>();
+		if(PlayerPrefs.GetInt("sfx") == 0) audio.mute = true;
+		else if(PlayerPrefs.GetInt("sfx") == 1) audio.mute = false;
 		audio.PlayOneShot(hitSound[x], 0.4f);	
 			
 		Invoke("SetDamaged", 0.1f);
