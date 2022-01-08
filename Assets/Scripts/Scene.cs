@@ -41,6 +41,12 @@ public class Scene : MonoBehaviour
 		StartCoroutine(loadAsync(levelName));
 	}
 	
+	public void loadCutscene(int cutsceneIndex)
+	{
+		string cutsceneName = "cutscene" + cutsceneIndex.ToString();
+		StartCoroutine(loadAsync(cutsceneName, false));
+	}
+	
 	public void loadMainMenu()
 	{
 		StartCoroutine(loadAsync("Main menu", false));
@@ -78,7 +84,7 @@ public class Scene : MonoBehaviour
 		{
 			float progress = Mathf.Clamp01(operation.progress/0.9f);
 			progress *= 100;
-			progressText.text = progress.ToString() + "%";
+			progressText.text = progress.ToString("0.##") + "%";
 			yield return null;
 		}
 		

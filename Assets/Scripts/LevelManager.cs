@@ -7,18 +7,32 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LevelManager : MonoBehaviour
 {
+	[Header("Sound")]
 	public AudioSource bgMusic;
+	public AudioSource soundEffect;
+	
 	public AudioClip gameoverMusic, completeMusic;
+	
+	public AudioClip transitionSound;
+	public AudioClip[] failStarSound = new AudioClip[2];
+	public AudioClip[] starSound = new AudioClip[3];
+	
+	[Header("Animator")]
 	public Animator vignette, blur;
-	public Text coinUI;
-	public Slider healthBar;
-	public RectTransform[] UICanvas;
+	
+	[Header("Enemy List")]
 	public Transform spiders, bats;
 	
 	private int totalEnemy, currentEnemy;
 	
 	[HideInInspector]
 	public bool isComplete = false, isGameover = false, end = false;
+	
+	[Header("User Interface")]
+	public Text coinUI;
+	public Slider healthBar;
+	public RectTransform[] UICanvas;
+	
 	public GameObject gameOverPanel, completePanel;
 	public GameObject[] MarkImage = new GameObject[3];
 	public GameObject[] MarkText = new GameObject[3];
@@ -32,8 +46,14 @@ public class LevelManager : MonoBehaviour
 		public CriterionTypes criterionTypes;
 		public int criterionMinValue;
 	}
+	
+	[Header("Criterion Settings")]
+	
 	[SerializeField]
-	public Criterion[] twoStar, threeStar;
+	public Criterion[] twoStar;
+	
+	[SerializeField]
+	public Criterion[] threeStar;
 	
     // Start is called before the first frame update
     private void Start()
@@ -72,6 +92,7 @@ public class LevelManager : MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 		
 		bgMusic.loop = false;
+		bgMusic.volume = 0.8f;
 		bgMusic.clip = gameoverMusic;
 		bgMusic.Play();
 		
@@ -141,6 +162,31 @@ public class LevelManager : MonoBehaviour
 		yield return new WaitForSeconds(1.2f);
 		
 		anim.SetInteger("star", star);
+		
+		if (star == 1)
+		{
+			soundEffect.PlayOneShot(starSound[0], 0.5f);
+			yield return new WaitForSeconds(0.8f);
+			soundEffect.PlayOneShot(failStarSound[0], 0.5f);
+			yield return new WaitForSeconds(0.6f);
+			soundEffect.PlayOneShot(failStarSound[1], 0.5f);
+		}
+		else if (star == 2)
+		{
+			soundEffect.PlayOneShot(starSound[0], 0.5f);
+			yield return new WaitForSeconds(0.75f);
+			soundEffect.PlayOneShot(starSound[1], 0.5f);
+			yield return new WaitForSeconds(0.75f);
+			soundEffect.PlayOneShot(failStarSound[1], 0.5f);
+		}
+		else if (star == 3)
+		{
+			soundEffect.PlayOneShot(starSound[0], 0.5f);
+			yield return new WaitForSeconds(0.75f);
+			soundEffect.PlayOneShot(starSound[1], 0.5f);
+			yield return new WaitForSeconds(0.75f);
+			soundEffect.PlayOneShot(starSound[2], 0.5f);
+		}
 	}
 	
 	public void openPanel(GameObject panel) {panel.transform.localScale = new Vector3(1, 1, 1);}
