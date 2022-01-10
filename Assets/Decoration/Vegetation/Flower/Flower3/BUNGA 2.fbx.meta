@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: e1deb09bf56d21dbd8fc36f5b77ae907
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle.005
+    100004: Circle.006
+    100006: Circle.007
+    100008: Circle.009
+    100010: Circle.010
+    100012: Circle.011
+    100014: Empty.001
+    400000: //RootNode
+    400002: Circle.005
+    400004: Circle.006
+    400006: Circle.007
+    400008: Circle.009
+    400010: Circle.010
+    400012: Circle.011
+    400014: Empty.001
+    2100000: Material.007
+    2100002: Material.013
+    2100004: Material.012
+    2100006: Material.010
+    2100008: Material
+    2100010: Material.009
+    2300000: Circle.005
+    2300002: Circle.006
+    2300004: Circle.007
+    2300006: Circle.009
+    2300008: Circle.010
+    2300010: Circle.011
+    3300000: Circle.005
+    3300002: Circle.006
+    3300004: Circle.007
+    3300006: Circle.009
+    3300008: Circle.010
+    3300010: Circle.011
+    4300000: Circle.011
+    4300002: Circle.006
+    4300004: Circle.005
+    4300006: Circle.007
+    4300008: Circle.009
+    4300010: Circle.010
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material-Color (1)
+    second: {fileID: 2800000, guid: 639ff139f16070fb7ac041d342d857dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.007-Color
+    second: {fileID: 2800000, guid: 5fb0fc1ad26df7621b3979bba053aead, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.009-Color
+    second: {fileID: 2800000, guid: 10d13a306ed65bbdab56abcd28953775, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.010-Color
+    second: {fileID: 2800000, guid: 87d032c4743898c3990a71330b0556ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.012-Color
+    second: {fileID: 2800000, guid: 9cac97aaa77fa9ad893930458b9a7308, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.013-Color
+    second: {fileID: 2800000, guid: 5f41c74e72e0059e689d181a7eed6cc9, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

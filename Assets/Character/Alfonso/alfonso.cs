@@ -40,7 +40,7 @@ public class alfonso : MonoBehaviour
 	private Animator anim;
 	
 	[Header("Visual Effect")]
-	public Animator hitEffectAnimator;
+	public Animator hitEffectAnimator, coinCounter;
 	private ParticleSystem healEffect;
 	
 	[Header("UI Coin & Health Bar")]
@@ -272,15 +272,23 @@ public class alfonso : MonoBehaviour
 			audio.PlayOneShot(coinSound, 0.4f);
 			coin++;
 			coinUI.text = coin.ToString();
+			coinCounter.SetTrigger("count");
 			Destroy(collision.gameObject);
 		}
 		
 		if (collision.gameObject.tag == "Diamond")
 		{
 			audio.PlayOneShot(diamondSound, 0.4f);
+			ParticleSystem diamondEffect = collision.transform.Find("effect").GetComponent<ParticleSystem>();
+			diamondEffect.Play();
+			
+			collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+			collision.gameObject.GetComponent<BoxCollider>().enabled = false;
+			
 			coin += 10;
 			coinUI.text = coin.ToString();
-			Destroy(collision.gameObject);
+			
+			Destroy(collision.gameObject, 5f);
 		}
 		
 		if (collision.gameObject.tag == "HealthPotion")
