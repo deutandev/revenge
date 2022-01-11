@@ -237,14 +237,50 @@ public class alfonso : MonoBehaviour
 			float collisionPosX = collision.gameObject.transform.position.x;
 			if (playerTransform.position.x > collisionPosX)
 			{
-				playerRigidbody.AddForce(600f, 1000f, 0);	
+				playerRigidbody.AddForce(800f, 1000f, 0);	
 			}
 			else
 			{
-				playerRigidbody.AddForce(-600f, 1000f, 0);	
+				playerRigidbody.AddForce(-800f, 1000f, 0);	
 			}
 			
 			StartCoroutine(TakeDamage(20f));
+			
+			StartCoroutine(DontMove(1f));
+		}
+		
+		 if (collision.gameObject.tag == "PlantShooter")
+        {	
+			float collisionPosX = collision.gameObject.transform.position.x;
+			if (playerTransform.position.x > collisionPosX)
+			{
+				playerRigidbody.AddForce(1000f, 1500f, 0);	
+			}
+			else
+			{
+				playerRigidbody.AddForce(-1000f, 1500f, 0);	
+			}
+			
+			StartCoroutine(TakeDamage(10f));
+			
+			StartCoroutine(DontMove(1f));
+		}
+		
+		if (collision.gameObject.tag == "Projectile")
+        {	
+			float collisionPosX = collision.gameObject.transform.position.x;
+			if (playerTransform.position.x > collisionPosX)
+			{
+				playerRigidbody.AddForce(800f, 1500f, 0);	
+			}
+			else
+			{
+				playerRigidbody.AddForce(-800f, 1500f, 0);	
+			}
+			
+			Destroy(collision.gameObject);
+			
+			StartCoroutine(TakeDamage(10f));
 			
 			StartCoroutine(DontMove(1f));
 		}

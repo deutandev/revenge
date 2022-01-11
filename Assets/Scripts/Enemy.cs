@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 		Invoke("SetDamaged", 0.1f);
 		health = health - damage;
 		Invoke("SetIdle", 0.2f);
-		if (health <= 0)
+		if (health <= 0 && state != EnemyState.Dead)
 		{
 			state = EnemyState.Dead;
 			Instantiate(DestroyedVersion, transform.position, transform.rotation);
