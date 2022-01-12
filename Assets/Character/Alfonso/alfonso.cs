@@ -191,7 +191,11 @@ public class alfonso : MonoBehaviour
 		if (jumpCount < 2)
 		{
 			jumpCount++;
-			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
+			if(jumpCount == 1)
+			{
+				playerRigidbody.velocity = Vector2.up * 18f;
+				anim.SetInteger("jump", 1);
+			}
 			else if(jumpCount == 2)
 			{
 				if(hurt == true) hurt = false;
