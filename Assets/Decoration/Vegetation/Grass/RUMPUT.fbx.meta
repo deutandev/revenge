@@ -17,7 +17,12 @@ ModelImporter:
     3300000: Plane.002
     4300000: Plane.002
     10800000: Light
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.001-RUMPUT
+    second: {fileID: 2800000, guid: cd7f79251574b3547aebdade5172c3f9, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,8 +59,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

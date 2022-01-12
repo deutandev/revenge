@@ -25,6 +25,7 @@ public class alfonso : MonoBehaviour
 	[Header("Hit Box Settings")]
 	public Transform hitBox;
 	public LayerMask whatIsEnemy;
+	public LayerMask whatIsProjectile;
 	public float attackRange;
 	
 	[Header("Landing Area Settings")]
@@ -41,6 +42,7 @@ public class alfonso : MonoBehaviour
 	
 	[Header("Visual Effect")]
 	public Animator hitEffectAnimator, coinCounter;
+	public Animator healthBarAnimator;
 	private ParticleSystem healEffect;
 	
 	[Header("UI Coin & Health Bar")]
@@ -57,6 +59,7 @@ public class alfonso : MonoBehaviour
 	public AudioClip[] healSound = new AudioClip[3];
 	public AudioClip[] hurtSound = new AudioClip[2];
 	public AudioClip coinSound, diamondSound;
+	public AudioSource sfxAudio;
 	
 	private AudioSource audio;
 	
@@ -86,7 +89,11 @@ public class alfonso : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
 		{
 			jumpCount++;
-			if(jumpCount == 1) playerRigidbody.velocity = Vector2.up * 18f;
+			if(jumpCount == 1)
+			{
+				playerRigidbody.velocity = Vector2.up * 18f;
+				anim.SetInteger("jump", 1);
+			}
 			else if(jumpCount == 2)
 			{
 				if(hurt == true) hurt = false;
@@ -228,12 +235,24 @@ public class alfonso : MonoBehaviour
 		{
 			enemy.GetComponent<Enemy>().TakeDamage(15f);
 		}
+		
+		Collider[] hitProjectile = Physics.OverlapSphere(hitBox.position, attackRange, whatIsProjectile);
+		foreach(Collider projectile in hitProjectile)
+		{
+			projectile.GetComponent<Projectile>().BounceProjectile();
+		}
 	}
     
     void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Spider" || collision.gameObject.tag == "Bat")
         {	
+			hurt = true;
+			jumpCount = 1;
+			anim.SetInteger("jump", 1);
+			
+			anim.SetBool("isRun", false);
+			
 			float collisionPosX = collision.gameObject.transform.position.x;
 			if (playerTransform.position.x > collisionPosX)
 			{
@@ -246,7 +265,7 @@ public class alfonso : MonoBehaviour
 			
 			StartCoroutine(TakeDamage(20f));
 			
-			StartCoroutine(DontMove(1f));
+			StartCoroutine(DontMove(0.5f));
 		}
 		
 		 if (collision.gameObject.tag == "PlantShooter")
@@ -260,6 +279,8 @@ public class alfonso : MonoBehaviour
 			{
 				playerRigidbody.AddForce(-1000f, 1500f, 0);	
 			}
+			
+			anim.SetBool("isRun", false);
 			
 			StartCoroutine(TakeDamage(10f));
 			
@@ -281,6 +302,8 @@ public class alfonso : MonoBehaviour
 			Destroy(collision.gameObject);
 			
 			StartCoroutine(TakeDamage(10f));
+			
+			anim.SetBool("isRun", false);
 			
 			StartCoroutine(DontMove(1f));
 		}
@@ -329,25 +352,28 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "HealthPotion")
 		{
-			if(health == 100) 
-			{
-				Physics.IgnoreCollision(GetComponent<BoxCollider>(), collision.gameObject.GetComponent<CapsuleCollider>());
-			}
-			else 
-			{
-				healEffect.Play();
+			healEffect.Play();
 			
-				HealthPotion healPoint = collision.gameObject.GetComponent<HealthPotion>();
+			float beforeHeal = health;
+			
+			HealthPotion healPoint = collision.gameObject.GetComponent<HealthPotion>();
 				
-				if(healPoint.health == 15) audio.PlayOneShot(healSound[0], 0.6f);
-				else if(healPoint.health == 25) audio.PlayOneShot(healSound[1], 0.6f);
-				else if(healPoint.health == 40) audio.PlayOneShot(healSound[2], 0.6f);
+			if(healPoint.health == 15) audio.PlayOneShot(healSound[0], 0.6f);
+			else if(healPoint.health == 25) audio.PlayOneShot(healSound[1], 0.6f);
+			else if(healPoint.health == 40) audio.PlayOneShot(healSound[2], 0.6f);
 				
-				health += healPoint.health;
-				if(health > 100) health = 100;
-				healthBar.value = health;
-				Destroy(collision.gameObject);	
+			health += healPoint.health;
+			if(beforeHeal <= 20 && health > 20)
+			{
+				healthBarAnimator.SetBool("dying", false);
+				level.vignette.SetBool("dying", false);
+				sfxAudio.Stop();
 			}
+			
+			if(health > 100) health = 100;
+			healthBar.value = health;
+			
+			Destroy(collision.gameObject);
 		}
 		
 		if (collision.gameObject.tag == "Zoom")
@@ -360,6 +386,12 @@ public class alfonso : MonoBehaviour
 		
 		if (collision.gameObject.tag == "Finish")
 		{
+			level.vignette.SetBool("dying", false);
+			sfxAudio.Stop();
+			
+			anim.SetBool("isRun", false);
+			move = false;
+			
 			level.isComplete = true;
 		}
 	}
@@ -388,12 +420,23 @@ public class alfonso : MonoBehaviour
 		
 		if(health <= 0)
 		{
+			hitEffectAnimator.SetTrigger("hit");
+			sfxAudio.Stop(); 
 			GameObject deathBody = Instantiate(RagdollVersion, transform.position, transform.rotation);
 			camera.target = deathBody.GetComponent<alfonsoRagdoll>().head;
 			level.isGameover = true;
 			Destroy(gameObject);	
 		}
-		else hitEffectAnimator.SetTrigger("hit"); 
+		else
+		{
+			if(health <= 20 && health > 0)
+			{
+				level.vignette.SetBool("dying", true);
+				healthBarAnimator.SetBool("dying", true);
+				sfxAudio.Play();
+			}
+			hitEffectAnimator.SetTrigger("hit"); 
+		}
 	}
     
     IEnumerator DontMove(float duration)
