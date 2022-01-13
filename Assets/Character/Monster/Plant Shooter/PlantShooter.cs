@@ -37,6 +37,12 @@ public class PlantShooter : Enemy
     // Update is called once per frame
     void Update()
     {
+		if(anim.GetBehaviour<PlantShooterAnimation>().shoot == true)
+		{
+			anim.GetBehaviour<PlantShooterAnimation>().shoot = false;
+			Invoke("SpawnProjectile", 0.8f);
+		}
+		
         if(State == EnemyState.Damaged) 
 		{
 			model.materials = hitMaterial;
@@ -45,17 +51,28 @@ public class PlantShooter : Enemy
 		else if (State == EnemyState.Idle) model.materials = defaultMaterial;
     }
     
+    void OnCollisionEnter(Collision collision)
+    {   
+        if (collision.gameObject.tag == "Projectile")
+        {
+			TakeDamage(15f);
+			Destroy(collision.gameObject);
+			
+		}
+	}
+	
+	private void SpawnProjectile()
+	{
+		GameObject y = Instantiate(projectile, projectileSpawner.transform.position, transform.rotation);
+	}
+    
     IEnumerator shoot(float delayTime)
     {
 		anim.SetTrigger("shoot");
-		yield return new WaitForSeconds(0.8f);
-		
-		GameObject y = Instantiate(projectile, projectileSpawner.transform.position, transform.rotation);
-		//transform.position = defaultPos;
 		
 		yield return new WaitForSeconds(delayTime);
 		
-		float x = Random.Range(1f, 6f);
+		float x = Random.Range(0f, 4f);
 		StartCoroutine(shoot(x));
 	}
 }

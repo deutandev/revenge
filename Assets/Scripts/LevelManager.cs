@@ -21,7 +21,9 @@ public class LevelManager : MonoBehaviour
 	public Animator vignette, blur;
 	
 	[Header("Enemy List")]
-	public Transform spiders, bats;
+	public Transform spiders;
+	public Transform bats;
+	public Transform plants;
 	
 	private int totalEnemy, currentEnemy;
 	
@@ -58,7 +60,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-		totalEnemy = spiders.childCount + bats.childCount;
+		totalEnemy = spiders.childCount + bats.childCount + plants.childCount;
         isComplete = false;
         isGameover = false;
     }
@@ -66,7 +68,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-		currentEnemy = spiders.childCount + bats.childCount;
+		currentEnemy = spiders.childCount + bats.childCount + plants.childCount;
         if(isComplete == true && end == false)
         {
 			end = true;

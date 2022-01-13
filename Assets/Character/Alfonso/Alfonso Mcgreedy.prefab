@@ -23555,6 +23555,9 @@ MonoBehaviour:
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
+  whatIsProjectile:
+    serializedVersion: 2
+    m_Bits: 2048
   attackRange: 2.5
   groundCheck: {fileID: 2577193465853446081}
   whatIsGround:
